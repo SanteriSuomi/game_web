@@ -1,4 +1,12 @@
-import { Box, Center, Link, Text, Wrap, WrapItem } from "@chakra-ui/react";
+import {
+	Box,
+	Button,
+	Center,
+	Link,
+	Text,
+	Wrap,
+	WrapItem,
+} from "@chakra-ui/react";
 import "@fontsource/bungee";
 import "./App.css";
 
@@ -6,14 +14,9 @@ function App() {
 	return (
 		<div className="App">
 			<Box className="NavBox">
-				<Wrap
-					className="NavBoxWrap"
-					spacing="3.5%"
-					justify="center"
-					align="center"
-				>
-					<WrapItem>
-						<Center className="NavBoxTextTitleBox">
+				<Wrap align="center" justify="center" spacing="4%">
+					<WrapItem className="NavBoxTextTitleWrapItem">
+						<Center>
 							<Text className="NavBoxTextTitle">
 								Slime Keeper
 							</Text>
@@ -39,7 +42,37 @@ function App() {
 							<Text className="NavBoxText">Whitepaper</Text>
 						</Link>
 					</WrapItem>
+					<WrapItem>
+						<Center>
+							<Link>
+								<Button className="LaunchAppButton">
+									Launch App
+								</Button>
+							</Link>
+						</Center>
+					</WrapItem>
 				</Wrap>
+			</Box>
+			<Box className="AboutBox">
+				<Center className="AboutBoxTextCenter">
+					<Text className="AboutBoxTextTitle">About</Text>
+				</Center>
+				<Text className="AboutBoxText">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Maxime mollitia, molestiae quas vel sint commodi repudiandae
+					consequuntur voluptatum laborum numquam blanditiis harum
+					quisquam eius sed odit fugiat iusto fuga praesentium optio,
+					eaque rerum! Provident similique accusantium nemo autem.
+					Veritatis obcaecati tenetur iure eius earum ut molestias
+					architecto voluptate aliquam nihil, eveniet aliquid culpa
+					officia aut! Impedit sit sunt quaerat, odit, tenetur error,
+					harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+					quia. Quo neque error repudiandae fuga? Ipsa laudantium
+					molestias eos sapiente officiis modi at sunt excepturi
+					expedita sint? Sed quibusdam recusandae alias error harum
+					maxime adipisci amet laborum. Perspiciatis minima nesciunt
+					dolorem! Officiis iure rerum voluptates a cumque velit{" "}
+				</Text>
 			</Box>
 		</div>
 	);

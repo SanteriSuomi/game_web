@@ -1,29 +1,69 @@
-.NavBox {
+.NavBox,
+.AboutBox {
 	background-color: rgb(87, 187, 87);
 	padding: 1% 1% 1% 1%;
-	width: 62.5%;
+	width: 85%;
 	border-radius: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 1%;
-	border-width: 2px;
+	border-width: 1.5px;
 	border-style: solid;
 	border-color: black;
 }
 
-.NavBoxTextTitleBox {
-	background-color: rgb(40, 46, 40);
-	border-radius: 20px;
-	width: 350px;
+.NavBox {
+	margin-top: 1%;
 }
 
-.NavBoxTextTitle {
+.AboutBox {
+	margin-top: 2%;
+}
+
+.NavBoxTextTitleWrapItem,
+.AboutBoxTextCenter {
+	background-color: rgb(40, 46, 40);
+	border-radius: 20px;
+	align-items: center;
+	justify-content: center;
+}
+
+.NavBoxTextTitleWrapItem {
+	width: 29%;
+}
+
+.AboutBoxTextCenter {
+	width: 15%;
+	margin-bottom: 1.5%;
+}
+
+.NavBoxTextTitle,
+.AboutBoxTextTitle {
 	font-family: "Bungee";
-	font-size: 40px;
 	color: white;
 }
 
-.NavBoxText {
+.NavBoxTextTitle {
+	font-size: 2.5vw;
+}
+
+.AboutBoxTextTitle {
+	font-size: 2vw;
+}
+
+.NavBoxText,
+.LaunchAppButton {
 	font-family: "Bungee";
-	font-size: 20px;
+}
+
+.NavBoxText {
+	font-size: 1.35vw;
+}
+
+.LaunchAppButton {
+	font-size: 1.4vw;
+}
+
+.AboutBoxText {
+	font-family: "Bungee";
+	font-size: 1vw;
 }
