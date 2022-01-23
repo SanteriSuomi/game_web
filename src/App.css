@@ -1,8 +1,16 @@
+.App {
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
 .NavBox,
-.AboutBox {
+.AboutBox,
+.TokenomicsBox,
+.RoadmapBox,
+.FooterBox {
 	background-color: rgb(87, 187, 87);
 	padding: 1% 1% 1% 1%;
-	width: 85%;
+	width: 80%;
 	border-radius: 20px;
 	margin-left: auto;
 	margin-right: auto;
@@ -11,33 +19,87 @@
 	border-color: black;
 }
 
-.NavBox {
-	margin-top: 1%;
+.FooterBox {
+	margin-top: 2%;
 }
 
-.AboutBox {
+.AboutBox,
+.TokenomicsBox,
+.RoadmapBox {
 	margin-top: 2%;
 }
 
 .NavBoxTextTitleWrapItem,
-.AboutBoxTextCenter {
+.AboutBoxTextCenter,
+.TokenomicsBoxTextCenter,
+.TokenomicsBoxTextCenterTaxes,
+.TokenomicsBoxTextCenterDistribution,
+.RoadmapBoxTextCenter,
+.AboutBoxCenterFeatures,
+.RoadmapBoxBoxTextCenter,
+.AboutBoxCenterImportant {
 	background-color: rgb(40, 46, 40);
 	border-radius: 20px;
 	align-items: center;
 	justify-content: center;
 }
 
+.RoadmapBoxBoxTextCenter {
+	margin-bottom: 2%;
+	margin-left: 15%;
+	width: 10%;
+}
+
 .NavBoxTextTitleWrapItem {
-	width: 29%;
+	width: 28%;
 }
 
 .AboutBoxTextCenter {
-	width: 15%;
+	width: 12%;
 	margin-bottom: 1.5%;
 }
 
+.TokenomicsBoxTextCenter {
+	width: 20%;
+}
+
+.TokenomicsBoxTextCenterTaxes {
+	margin-top: 2%;
+	width: 14%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.TokenomicsBoxTextCenterDistribution {
+	margin-top: 2%;
+	width: 31%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.RoadmapBoxTextCenter {
+	width: 15%;
+}
+
+.AboutBoxCenterFeatures {
+	margin-top: 2%;
+	width: 11%;
+}
+
+.AboutBoxCenterImportant {
+	margin-top: 2%;
+	width: 20%;
+}
+
 .NavBoxTextTitle,
-.AboutBoxTextTitle {
+.AboutBoxTextTitle,
+.TokenomicsBoxTextTitle,
+.TokenomicsBoxTextTitleTaxes,
+.TokenomicsBoxTextTitleDistribution,
+.RoadmapBoxTextTitle,
+.AboutBoxTextTitleFeatures,
+.RoadmapBoxBoxTextTitle,
+.AboutBoxTextTitleImportant {
 	font-family: "Bungee";
 	color: white;
 }
@@ -46,13 +108,27 @@
 	font-size: 2.5vw;
 }
 
-.AboutBoxTextTitle {
+.AboutBoxTextTitle,
+.TokenomicsBoxTextTitle,
+.RoadmapBoxTextTitle {
 	font-size: 2vw;
 }
 
+.TokenomicsBoxTextTitleTaxes,
+.TokenomicsBoxTextTitleDistribution,
+.AboutBoxTextTitleFeatures,
+.AboutBoxTextTitleImportant {
+	font-size: 1.3vw;
+}
+
 .NavBoxText,
-.LaunchAppButton {
+.LaunchAppButton,
+.AboutImportantLinksText {
 	font-family: "Bungee";
+}
+
+.AboutImportantLinks {
+	margin-top: 2%;
 }
 
 .NavBoxText {
@@ -63,7 +139,63 @@
 	font-size: 1.4vw;
 }
 
-.AboutBoxText {
+.RoadmapBoxBoxTextTitle {
+	font-size: 1.1vw;
+}
+
+.AboutBoxText,
+.AboutBoxList,
+.TokenomicsBoxText,
+.RoadmapBoxText {
 	font-family: "Bungee";
 	font-size: 1vw;
+}
+
+.AboutBoxList,
+.TokenomicsBoxText,
+.RoadmapBoxText {
+	margin-top: 2%;
+}
+
+.RoadmapBoxBox {
+	background-color: rgb(243, 243, 243);
+	margin-top: 2%;
+	width: 80%;
+	padding: 1% 1% 1% 1%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 20px;
+	border-width: 1.5px;
+	border-style: solid;
+	border-color: black;
+}
+
+.RoadmapBoxBoxItem {
+	font-family: "Bungee";
+	font-size: 1vw;
+	margin-left: 15%;
+}
+
+.RoadMapBoxBoxList {
+	margin-bottom: 2%;
+}
+
+.FooterTgBox,
+.FooterDevBox {
+	font-family: "Bungee";
+	margin-left: 2%;
+}
+
+.FooterTgBox {
+	font-size: 1vw;
+}
+
+.FooterDevBox {
+	font-size: 1.25vw;
+	width: 35%;
+}
+
+.FooterDevBoxText {
+	margin-left: 5%;
+	margin-top: 3%;
 }
