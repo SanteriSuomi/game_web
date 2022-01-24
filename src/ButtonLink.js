@@ -14,7 +14,6 @@ function ButtonLink({ href, className, width, height, content }) {
 					className={className}
 					border="1px"
 					borderColor="black.500"
-					fontSize={"2vw"}
 					width={width}
 					height={height}
 				>

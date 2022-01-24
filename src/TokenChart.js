@@ -1,14 +1,10 @@
 import { Box } from "@chakra-ui/react";
 import { Doughnut } from "react-chartjs-2";
+import "./App.css";
 
 function TokenChart({ labels, data }) {
 	return (
-		<Box
-			width={"90%"}
-			marginLeft={"auto"}
-			marginRight={"auto"}
-			marginTop={"2%"}
-		>
+		<Box className="TokenChartBox">
 			<Doughnut
 				options={{
 					plugins: {

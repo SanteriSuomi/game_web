@@ -77,15 +77,13 @@ function App() {
 						marginLeft={navbarMargin}
 						marginRight={navbarMargin}
 					></Box>
-					<Box marginBottom={"1.5%"}>
-						<ButtonLink
-							href={"/app"}
-							className={"LaunchAppButton"}
-							width={"13vw"}
-							height={"4vw"}
-							content={<Text>{"Launch Game"}</Text>}
-						></ButtonLink>
-					</Box>
+					<ButtonLink
+						href={"/app"}
+						className={"LaunchAppButton"}
+						width={"14vw"}
+						height={"4.25vw"}
+						content={<Text>{"Launch Game"}</Text>}
+					></ButtonLink>
 				</Flex>
 			</Box>
 			<Box className="AboutBox" ref={aboutRef}>
@@ -130,12 +128,7 @@ function App() {
 						Important Links
 					</Text>
 				</Center>
-				<Wrap
-					className="AboutImportantLinks"
-					spacing={"1%"}
-					shouldWrapChildren={true}
-					align={"center"}
-				>
+				<Wrap spacing={"1%"} shouldWrapChildren={true} align={"center"}>
 					<ButtonLink
 						href={"/contract"}
 						className={"AboutImportantLinksText"}
@@ -161,7 +154,7 @@ function App() {
 						href={"/chart"}
 						className={"AboutImportantLinksText"}
 						text={"Chart"}
-						width={"7vw"}
+						width={"7.5vw"}
 						height={"3vw"}
 						content={<Text>{"Chart"}</Text>}
 					></ButtonLink>

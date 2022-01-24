@@ -56,7 +56,7 @@
 
 .AboutBoxTextCenter {
 	width: 10%;
-	margin-bottom: 1.5%;
+	margin-bottom: 2%;
 }
 
 .TokenomicsBoxTextCenter {
@@ -88,6 +88,7 @@
 
 .AboutBoxCenterImportant {
 	margin-top: 2%;
+	margin-bottom: 2%;
 	width: 25%;
 }
 
@@ -108,16 +109,13 @@
 	font-size: 2.65vw;
 }
 
-.AboutBoxTextTitle,
-.TokenomicsBoxTextTitle,
-.RoadmapBoxTextTitle {
-	font-size: 2vw;
-}
-
 .TokenomicsBoxTextTitleTaxes,
 .TokenomicsBoxTextTitleDistribution,
 .AboutBoxTextTitleFeatures,
-.AboutBoxTextTitleImportant {
+.AboutBoxTextTitleImportant,
+.AboutBoxTextTitle,
+.TokenomicsBoxTextTitle,
+.RoadmapBoxTextTitle {
 	font-size: 2vw;
 }
 
@@ -127,8 +125,8 @@
 	font-family: "Bungee";
 }
 
-.AboutImportantLinks {
-	margin-top: 0%;
+.AboutImportantLinksText > * {
+	font-size: 2vw;
 }
 
 .NavBoxText {
@@ -136,7 +134,11 @@
 }
 
 .LaunchAppButton {
-	font-size: 1.6vw;
+	margin-bottom: 5%;
+}
+
+.LaunchAppButton > * {
+	font-size: 1.75vw;
 }
 
 .RoadmapBoxBoxTextTitle {
@@ -150,6 +152,10 @@
 	font-family: "Bungee";
 	font-size: 2vw;
 	margin-left: 1%;
+}
+
+.AboutBoxList {
+	margin-left: 3%;
 }
 
 .AboutBoxList,
@@ -185,6 +191,13 @@
 	margin-bottom: 2%;
 }
 
+.TokenChartBox {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2%;
+}
+
 .FooterTgBox,
 .FooterDevBox {
 	font-family: "Bungee";
@@ -203,4 +216,84 @@
 .FooterDevBoxText {
 	margin-left: 5%;
 	margin-top: 3%;
+}
+
+@media (min-width: 768px) {
+	.LaunchAppButton {
+		margin-bottom: 0%;
+	}
+}
+
+@media (min-width: 1024px) {
+	.NavBox,
+	.AboutBox,
+	.TokenomicsBox,
+	.RoadmapBox,
+	.FooterBox {
+		width: 85%;
+	}
+
+	.NavBoxTextTitle {
+		font-size: 2.4vw;
+	}
+
+	.NavBoxText {
+		font-size: 1.55vw;
+	}
+
+	.TokenomicsBoxTextTitleTaxes,
+	.TokenomicsBoxTextTitleDistribution,
+	.AboutBoxTextTitleFeatures,
+	.AboutBoxTextTitleImportant,
+	.AboutBoxTextTitle,
+	.TokenomicsBoxTextTitle,
+	.RoadmapBoxTextTitle {
+		font-size: 1.4vw;
+	}
+
+	.AboutBoxText,
+	.AboutBoxList,
+	.TokenomicsBoxText,
+	.RoadmapBoxText {
+		font-size: 1.15vw;
+	}
+
+	.AboutBoxTextCenter {
+		width: 8%;
+	}
+
+	.AboutBoxCenterFeatures {
+		width: 11%;
+	}
+
+	.AboutBoxCenterImportant {
+		width: 20%;
+	}
+
+	.AboutImportantLinksText > * {
+		font-size: 1.5vw;
+	}
+
+	.LaunchAppButton {
+		font-size: 2.5vw;
+	}
+
+	.RoadmapBoxBoxTextTitle {
+		font-size: 1.5vw;
+	}
+
+	.RoadmapBoxBoxItem {
+		font-family: "Bungee";
+		font-size: 1.25vw;
+		margin-left: 5%;
+	}
+
+	.FooterDevBox {
+		font-size: 1.4vw;
+		width: 40%;
+	}
+
+	.TokenChartBox {
+		width: 80%;
+	}
 }
