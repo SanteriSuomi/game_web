@@ -2,7 +2,7 @@ import { Button, Link } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import "./App.css";
 
-function ButtonLink({ text, href, className, width, height }) {
+function ButtonLink({ text, href, className, width, height, align }) {
 	return (
 		<motion.Box
 			whileHover={{
@@ -14,9 +14,10 @@ function ButtonLink({ text, href, className, width, height }) {
 					className={className}
 					border="1px"
 					borderColor="black.500"
-					fontSize={"1.25vw"}
+					fontSize={"2vw"}
 					width={width}
 					height={height}
+					verticalAlign={align ? "center" : ""}
 				>
 					{text}
 				</Button>

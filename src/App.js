@@ -32,48 +32,64 @@ function App() {
 	const roadmapRef = useRef(null);
 	const executeScroll = (ref) => ref.current.scrollIntoView();
 
+	const navbarMargin = "0.7%";
+
 	return (
 		<div className="App">
 			<Box className="NavBox">
 				<Flex direction="row" align="center" justify="center">
-					<Box className="NavBoxTextTitleWrapItem">
-						<Center>
-							<Text className="NavBoxTextTitle">
-								Slime Keeper
-							</Text>
-						</Center>
-					</Box>
-					<Box marginLeft={"1.25%"} marginRight={"1.25%"}></Box>
+					<Center className="NavBoxTextTitleWrapItem">
+						<Text className="NavBoxTextTitle">Slime Keeper</Text>
+					</Center>
+					<Box
+						marginLeft={navbarMargin}
+						marginRight={navbarMargin}
+					></Box>
 					<NavBarLink
 						executeScroll={executeScroll}
 						refe={aboutRef}
 						text={"About"}
 					></NavBarLink>
-					<Box marginLeft={"1.25%"} marginRight={"1.25%"}></Box>
+					<Box
+						marginLeft={navbarMargin}
+						marginRight={navbarMargin}
+					></Box>
 					<NavBarLink
 						executeScroll={executeScroll}
 						refe={tokenomicsRef}
 						text={"Tokenomics"}
 					></NavBarLink>
-					<Box marginLeft={"1.25%"} marginRight={"1.25%"}></Box>
+					<Box
+						marginLeft={navbarMargin}
+						marginRight={navbarMargin}
+					></Box>
 					<NavBarLink
 						executeScroll={executeScroll}
 						refe={roadmapRef}
 						text={"Roadmap"}
 					></NavBarLink>
-					<Box marginLeft={"1.25%"} marginRight={"1.25%"}></Box>
+					<Box
+						marginLeft={navbarMargin}
+						marginRight={navbarMargin}
+					></Box>
 					<NavBarLink
 						text={"Whitepaper"}
 						href={"/whitepaper"}
 					></NavBarLink>
-					<Box marginLeft={"1.25%"} marginRight={"1.25%"}></Box>
-					<ButtonLink
-						href={"/app"}
-						className={"LaunchAppButton"}
-						text={"Launch App"}
-						width={"10vw"}
-						height={"2.5vw"}
-					></ButtonLink>
+					<Box
+						marginLeft={navbarMargin}
+						marginRight={navbarMargin}
+					></Box>
+					<Box marginBottom={"2%"}>
+						<ButtonLink
+							href={"/app"}
+							className={"LaunchAppButton"}
+							text={"Launch Game"}
+							width={"18vw"}
+							height={"4vw"}
+							align={false}
+						></ButtonLink>
+					</Box>
 				</Flex>
 			</Box>
 			<Box className="AboutBox" ref={aboutRef}>
@@ -100,10 +116,18 @@ function App() {
 					<Text className="AboutBoxTextTitleFeatures">Features</Text>
 				</Center>
 				<UnorderedList className="AboutBoxList">
-					<ListItem>Lorem ipsum dolor sit amet</ListItem>
-					<ListItem>Consectetur adipiscing elit</ListItem>
-					<ListItem>Integer molestie lorem at massa</ListItem>
-					<ListItem>Facilisis in pretium nisl aliquet</ListItem>
+					<ListItem className="AboutBoxListText">
+						Lorem ipsum dolor sit amet
+					</ListItem>
+					<ListItem className="AboutBoxListText">
+						Consectetur adipiscing elit
+					</ListItem>
+					<ListItem className="AboutBoxListText">
+						Integer molestie lorem at massa
+					</ListItem>
+					<ListItem className="AboutBoxListText">
+						Facilisis in pretium nisl aliquet
+					</ListItem>
 				</UnorderedList>
 				<Center className="AboutBoxCenterImportant">
 					<Text className="AboutBoxTextTitleImportant">
@@ -119,36 +143,36 @@ function App() {
 						href={"/contract"}
 						className={"AboutImportantLinksText"}
 						text={"Contract"}
-						width={"9vw"}
-						height={"2.5vw"}
+						width={"13vw"}
+						height={"3vw"}
 					></ButtonLink>
 					<ButtonLink
 						href={"/audit"}
 						className={"AboutImportantLinksText"}
 						text={"Audit"}
-						width={"6.5vw"}
-						height={"2.5vw"}
+						width={"8vw"}
+						height={"3vw"}
 					></ButtonLink>
 					<ButtonLink
 						href={"/liquiditylock"}
 						className={"AboutImportantLinksText"}
 						text={"Liquidity Lock"}
-						width={"13vw"}
-						height={"2.5vw"}
+						width={"20vw"}
+						height={"3vw"}
 					></ButtonLink>
 					<ButtonLink
 						href={"/chart"}
 						className={"AboutImportantLinksText"}
 						text={"Chart"}
-						width={"6.5vw"}
-						height={"2.5vw"}
+						width={"7vw"}
+						height={"3vw"}
 					></ButtonLink>
 					<ButtonLink
 						href={"/presale"}
 						className={"AboutImportantLinksText"}
 						text={"Presale"}
-						width={"8vw"}
-						height={"2.5vw"}
+						width={"12vw"}
+						height={"3vw"}
 					></ButtonLink>
 					<motion.Box
 						whileHover={{
@@ -165,14 +189,15 @@ function App() {
 							<Button
 								border="1px"
 								borderColor="black.500"
-								width={"4vw"}
-								height={"2.5vw"}
+								width={"1vw"}
+								height={"3vw"}
+								marginTop={"7.5%"}
 							>
 								<Icon
 									as={FaTelegram}
 									color="black.500"
-									w={"1.75vw"}
-									h={"1.75vw"}
+									w={"2.5vw"}
+									h={"2.5vw"}
 								></Icon>
 							</Button>
 						</Link>
