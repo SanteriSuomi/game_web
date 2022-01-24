@@ -1,6 +1,6 @@
 import { Link, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import "./App.css";
+import "./Main.css";
 
 function NavBarLink({ executeScroll, refe, text, href }) {
 	return (

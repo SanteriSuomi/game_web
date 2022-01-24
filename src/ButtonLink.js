@@ -1,6 +1,6 @@
 import { Button, Link } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import "./App.css";
+import "./Main.css";
 
 function ButtonLink({ href, className, width, height, content }) {
 	return (

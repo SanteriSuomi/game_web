@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { Doughnut } from "react-chartjs-2";
-import "./App.css";
+import "./Main.css";
 
 function TokenChart({ labels, data }) {
 	return (
