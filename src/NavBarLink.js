@@ -4,9 +4,9 @@ import "./App.css";
 
 function NavBarLink({ executeScroll, refe, text, href }) {
 	return (
-		<motion.Box
+		<motion.div
 			whileHover={{
-				scale: 1.02,
+				scale: 1.1,
 			}}
 		>
 			<Link
@@ -18,7 +18,7 @@ function NavBarLink({ executeScroll, refe, text, href }) {
 			>
 				<Text className="NavBoxText">{text}</Text>
 			</Link>
-		</motion.Box>
+		</motion.div>
 	);
 }
 

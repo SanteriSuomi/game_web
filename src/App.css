@@ -105,7 +105,7 @@
 }
 
 .NavBoxTextTitle {
-	font-size: 2.6vw;
+	font-size: 2.65vw;
 }
 
 .AboutBoxTextTitle,
@@ -132,11 +132,11 @@
 }
 
 .NavBoxText {
-	font-size: 1.9vw;
+	font-size: 1.95vw;
 }
 
 .LaunchAppButton {
-	font-size: 1.4vw;
+	font-size: 1.6vw;
 }
 
 .RoadmapBoxBoxTextTitle {
@@ -165,7 +165,7 @@
 .RoadmapBoxBox {
 	background-color: rgb(243, 243, 243);
 	margin-top: 2%;
-	width: 80%;
+	width: 85%;
 	padding: 1% 1% 1% 1%;
 	margin-left: auto;
 	margin-right: auto;
@@ -177,7 +177,7 @@
 
 .RoadmapBoxBoxItem {
 	font-family: "Bungee";
-	font-size: 1.5vw;
+	font-size: 1.7vw;
 	margin-left: 5%;
 }
 
@@ -196,8 +196,8 @@
 }
 
 .FooterDevBox {
-	font-size: 1.25vw;
-	width: 35%;
+	font-size: 2vw;
+	width: 40%;
 }
 
 .FooterDevBoxText {

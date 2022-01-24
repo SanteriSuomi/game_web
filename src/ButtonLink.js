@@ -2,11 +2,11 @@ import { Button, Link } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import "./App.css";
 
-function ButtonLink({ text, href, className, width, height, align }) {
+function ButtonLink({ href, className, width, height, content }) {
 	return (
-		<motion.Box
+		<motion.div
 			whileHover={{
-				scale: 1.015,
+				scale: 1.1,
 			}}
 		>
 			<Link href={href} style={{ textDecoration: "none" }}>
@@ -17,12 +17,11 @@ function ButtonLink({ text, href, className, width, height, align }) {
 					fontSize={"2vw"}
 					width={width}
 					height={height}
-					verticalAlign={align ? "center" : ""}
 				>
-					{text}
+					{content}
 				</Button>
 			</Link>
-		</motion.Box>
+		</motion.div>
 	);
 }
 

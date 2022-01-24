@@ -1,10 +1,8 @@
 import {
 	Box,
-	Button,
 	Center,
 	Flex,
 	Icon,
-	Link,
 	List,
 	ListIcon,
 	ListItem,
@@ -16,11 +14,10 @@ import {
 import "@fontsource/bungee";
 import "./App.css";
 import { BsCheckSquare, BsDashSquare } from "react-icons/bs";
-import { FaTelegram, FaRegCopyright } from "react-icons/fa";
+import { FaRegCopyright, FaTelegram } from "react-icons/fa";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import TokenChart from "./TokenChart";
 import { useRef } from "react";
-import { motion } from "framer-motion";
 import NavBarLink from "./NavBarLink";
 import ButtonLink from "./ButtonLink";
 
@@ -32,7 +29,7 @@ function App() {
 	const roadmapRef = useRef(null);
 	const executeScroll = (ref) => ref.current.scrollIntoView();
 
-	const navbarMargin = "0.7%";
+	const navbarMargin = "1%";
 
 	return (
 		<div className="App">
@@ -80,14 +77,13 @@ function App() {
 						marginLeft={navbarMargin}
 						marginRight={navbarMargin}
 					></Box>
-					<Box marginBottom={"2%"}>
+					<Box marginBottom={"1.5%"}>
 						<ButtonLink
 							href={"/app"}
 							className={"LaunchAppButton"}
-							text={"Launch Game"}
-							width={"18vw"}
+							width={"13vw"}
 							height={"4vw"}
-							align={false}
+							content={<Text>{"Launch Game"}</Text>}
 						></ButtonLink>
 					</Box>
 				</Flex>
@@ -138,27 +134,28 @@ function App() {
 					className="AboutImportantLinks"
 					spacing={"1%"}
 					shouldWrapChildren={true}
+					align={"center"}
 				>
 					<ButtonLink
 						href={"/contract"}
 						className={"AboutImportantLinksText"}
-						text={"Contract"}
 						width={"13vw"}
 						height={"3vw"}
+						content={<Text>{"Contract"}</Text>}
 					></ButtonLink>
 					<ButtonLink
 						href={"/audit"}
 						className={"AboutImportantLinksText"}
-						text={"Audit"}
 						width={"8vw"}
 						height={"3vw"}
+						content={<Text>{"Audit"}</Text>}
 					></ButtonLink>
 					<ButtonLink
 						href={"/liquiditylock"}
 						className={"AboutImportantLinksText"}
-						text={"Liquidity Lock"}
 						width={"20vw"}
 						height={"3vw"}
+						content={<Text>{"Liquidity Lock"}</Text>}
 					></ButtonLink>
 					<ButtonLink
 						href={"/chart"}
@@ -166,42 +163,22 @@ function App() {
 						text={"Chart"}
 						width={"7vw"}
 						height={"3vw"}
+						content={<Text>{"Chart"}</Text>}
 					></ButtonLink>
 					<ButtonLink
 						href={"/presale"}
 						className={"AboutImportantLinksText"}
-						text={"Presale"}
 						width={"12vw"}
 						height={"3vw"}
+						content={<Text>{"Presale"}</Text>}
 					></ButtonLink>
-					<motion.Box
-						whileHover={{
-							scale: 1.01,
-						}}
-						style={{
-							textDecoration: "none",
-						}}
-					>
-						<Link
-							className="AboutImportantLinksText"
-							href="https://t.me/raritoken"
-						>
-							<Button
-								border="1px"
-								borderColor="black.500"
-								width={"1vw"}
-								height={"3vw"}
-								marginTop={"7.5%"}
-							>
-								<Icon
-									as={FaTelegram}
-									color="black.500"
-									w={"2.5vw"}
-									h={"2.5vw"}
-								></Icon>
-							</Button>
-						</Link>
-					</motion.Box>
+					<ButtonLink
+						href={"https://t.me/raritoken"}
+						className={"AboutImportantLinksText"}
+						width={"2vw"}
+						height={"3vw"}
+						content={<Icon as={FaTelegram} boxSize="1.25em"></Icon>}
+					></ButtonLink>
 				</Wrap>
 			</Box>
 			<Box className="TokenomicsBox" ref={tokenomicsRef}>
@@ -279,7 +256,6 @@ function App() {
 						<ListItem className="RoadmapBoxBoxItem">
 							<Box display="flex" align="center" justify="center">
 								<ListIcon as={BsDashSquare} color="red.500" />
-
 								<Text>
 									Quidem, ipsam illum quis sed voluptatum quae
 									eum fugit earum
@@ -322,18 +298,12 @@ function App() {
 				</Box>
 			</Box>
 			<Box className="FooterBox" display="flex">
-				<Box
-					className="FooterDevBox"
-					display="flex"
-					align="center"
-					justify="center"
-				>
+				<Box className="FooterDevBox" display="flex">
 					<Icon
 						className="FooterDevBoxIcon"
 						as={FaRegCopyright}
 						color="black"
-						w={"3.5vw"}
-						h={"3.5vw"}
+						boxSize="2.5em"
 					/>
 					<Text className="FooterDevBoxText">
 						Slime Keeper Team 2022

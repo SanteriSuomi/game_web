@@ -4,7 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 function TokenChart({ labels, data }) {
 	return (
 		<Box
-			width={"95%"}
+			width={"90%"}
 			marginLeft={"auto"}
 			marginRight={"auto"}
 			marginTop={"2%"}
@@ -13,13 +13,7 @@ function TokenChart({ labels, data }) {
 				options={{
 					plugins: {
 						legend: {
-							labels: {
-								font: {
-									size: "4%",
-									family: "Bungee",
-								},
-								color: "#000000",
-							},
+							display: false,
 						},
 					},
 				}}
