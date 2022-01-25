@@ -6,8 +6,26 @@ import { motion } from "framer-motion";
 import ProgressBar from "./ProgressBar";
 
 const Moralis = require("moralis");
+const serverUrl = "https://5ywwhrwyqbuo.usemoralis.com:2053/server";
+const appId = "HHiRwV2oHbmzWn3esARISFxrxOEzO3OfOISfmLeAD";
+Moralis.start({ serverUrl, appId });
 
 function Mint() {
+	let user = Moralis.User.current();
+
+	async function login() {
+		if (!user) {
+			user = await Moralis.authenticate({
+				signingMessage: "Please log in.",
+			})
+				.then((u) => {
+					console.log(u);
+					console.log(u.get("ethAddress"));
+				})
+				.catch((err) => console.error(err));
+		}
+	}
+
 	return (
 		<div className="Mint">
 			<Box className="MintBox">
@@ -44,7 +62,13 @@ function Mint() {
 							scale: 1.1,
 						}}
 					>
-						<Button backgroundColor={"black"} textColor={"white"}>
+						<Button
+							backgroundColor={"black"}
+							textColor={"white"}
+							onClick={() => {
+								login();
+							}}
+						>
 							Connect
 						</Button>
 					</motion.div>

@@ -5,7 +5,7 @@ import Mint from "./Mint/Mint";
 function App() {
 	return (
 		<Routes>
-			<Route path="/" element={<Main></Main>}></Route>
+			<Route exact path="/" element={<Main></Main>}></Route>
 			<Route path="/mint" element={<Mint></Mint>}></Route>
 		</Routes>
 	);
