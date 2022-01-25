@@ -15,9 +15,7 @@ function Mint() {
 
 	async function login() {
 		if (!user) {
-			user = await Moralis.authenticate({
-				signingMessage: "Please log in.",
-			})
+			user = await Moralis.authenticate({ provider: "walletconnect" })
 				.then((u) => {
 					console.log(u);
 					console.log(u.get("ethAddress"));
