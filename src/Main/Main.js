@@ -30,7 +30,7 @@ function Main() {
 	const executeScroll = (ref) => ref.current.scrollIntoView();
 
 	return (
-		<div className="App">
+		<div className="Main">
 			<Box className="NavBox">
 				<Flex direction="row" align="center" justify="center">
 					<Center className="NavBoxTextTitleWrapItem">

@@ -1,0 +1,61 @@
+* {
+	font-family: "Bungee";
+}
+
+.Mint {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.MintBox {
+	background-color: rgb(87, 187, 87);
+	border-radius: 10px;
+	border-width: 1.5px;
+	border-style: solid;
+	border-color: black;
+	width: 87.5%;
+	height: 85%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.InnerBox {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 95%;
+	width: 275px;
+	background-color: whitesmoke;
+	margin-top: auto;
+	margin-bottom: auto;
+	border-radius: 10px;
+	border-color: black;
+	border-width: 1px;
+}
+
+.TitleCenter {
+	background-color: rgb(40, 46, 40);
+	border-radius: 10px;
+	width: 250px;
+	height: 75px;
+	margin-top: 3%;
+}
+
+.ButtonText {
+	color: white;
+	font-size: 25px;
+}
+
+.Carousel {
+	width: 250px;
+	height: 75px;
+	margin-bottom: 220px;
+}
+
+.ButtonConnect {
+	margin-bottom: 4%;
+}
