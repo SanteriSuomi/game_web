@@ -1,27 +1,55 @@
-import { Box, Button, Center, Image, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Center,
+	Image,
+	NumberDecrementStepper,
+	NumberIncrementStepper,
+	NumberInput,
+	NumberInputField,
+	NumberInputStepper,
+	Text,
+} from "@chakra-ui/react";
 import "./Mint.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import { motion } from "framer-motion";
 import ProgressBar from "./ProgressBar";
+import Popup from "reactjs-popup";
+import MintButton from "./MintButton.js";
+import { useState } from "react";
 
 const Moralis = require("moralis");
-const serverUrl = "https://5ywwhrwyqbuo.usemoralis.com:2053/server";
-const appId = "HHiRwV2oHbmzWn3esARISFxrxOEzO3OfOISfmLeAD";
+const serverUrl = process.env.REACT_APP_SERVER_URL;
+const appId = process.env.REACT_APP_APP_ID;
 Moralis.start({ serverUrl, appId });
 
 function Mint() {
-	let user = Moralis.User.current();
+	const [user, setUser] = useState(Moralis.User.current());
+	const [amount, setAmount] = useState(0);
 
-	async function login() {
-		if (!user) {
-			user = await Moralis.authenticate({ provider: "walletconnect" })
+	async function connect(metamask) {
+		if (metamask) {
+			await Moralis.authenticate()
 				.then((u) => {
-					console.log(u);
-					console.log(u.get("ethAddress"));
+					setUser(u);
 				})
-				.catch((err) => console.error(err));
+				.catch((e) => console.log(e));
+		} else {
+			await Moralis.authenticate({ provider: "walletconnect" })
+				.then((u) => {
+					setUser(u);
+				})
+				.catch((e) => console.log(e));
 		}
+	}
+
+	async function disconnect() {
+		await Moralis.User.logOut().then(() => {
+			setUser(Moralis.User.current());
+		});
+	}
+
+	async function mint() {
+		console.log(amount);
 	}
 
 	return (
@@ -54,22 +82,58 @@ function Mint() {
 						current={150}
 						max={1000}
 					></ProgressBar>
-					<motion.div
-						className="ButtonConnect"
-						whileHover={{
-							scale: 1.1,
-						}}
-					>
-						<Button
-							backgroundColor={"black"}
-							textColor={"white"}
-							onClick={() => {
-								login();
-							}}
+					{user ? (
+						<Box className="MintingBox">
+							<NumberInput
+								defaultValue={1}
+								min={1}
+								max={10}
+								onChange={(val) => setAmount(parseInt(val))}
+							>
+								<NumberInputField />
+								<NumberInputStepper>
+									<NumberIncrementStepper />
+									<NumberDecrementStepper />
+								</NumberInputStepper>
+							</NumberInput>
+							<Box h={1}></Box>
+							<Box className="MintingBoxButtons">
+								<MintButton
+									content={"Mint"}
+									onClickEvent={mint}
+								></MintButton>
+								<Box w={1}></Box>
+								<MintButton
+									content={"Disconnect"}
+									onClickEvent={disconnect}
+								></MintButton>
+							</Box>
+						</Box>
+					) : (
+						<Popup
+							position={"center center"}
+							closeOnDocumentClick={true}
+							trigger={(open) => (
+								<MintButton
+									style={{ marginBottom: "4%" }}
+									content={"Connect"}
+									open={open}
+								></MintButton>
+							)}
 						>
-							Connect
-						</Button>
-					</motion.div>
+							<Center className="PopupContent">
+								<MintButton
+									content={"MetaMask"}
+									onClickEvent={() => connect(true)}
+								></MintButton>
+								<Box width={1}></Box>
+								<MintButton
+									content={"WalleConnect"}
+									onClickEvent={() => connect(false)}
+								></MintButton>
+							</Center>
+						</Popup>
+					)}
 				</Box>
 			</Box>
 		</div>

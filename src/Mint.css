@@ -56,6 +56,27 @@
 	margin-bottom: 220px;
 }
 
-.ButtonConnect {
+.PopupContent {
+	background-color: white;
+	width: 325px;
+	height: 75px;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	border-radius: 10px;
+	border-color: black;
+	border-width: 1px;
+}
+
+.MintingBox {
 	margin-bottom: 4%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 75px;
+}
+
+.MintingBoxButtons {
+	display: flex;
 }
