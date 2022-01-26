@@ -1,3 +1,7 @@
+* {
+	font-family: "Bungee";
+}
+
 .Main {
 	margin-top: 2%;
 	margin-bottom: 2%;
@@ -106,7 +110,6 @@
 .AboutBoxTextTitleFeatures,
 .RoadmapBoxBoxTextTitle,
 .AboutBoxTextTitleImportant {
-	font-family: "Bungee";
 	color: white;
 }
 
@@ -122,12 +125,6 @@
 .TokenomicsBoxTextTitle,
 .RoadmapBoxTextTitle {
 	font-size: 2vw;
-}
-
-.NavBoxText,
-.LaunchAppButton,
-.AboutImportantLinksText {
-	font-family: "Bungee";
 }
 
 .AboutImportantLinksText > * {
@@ -154,7 +151,6 @@
 .AboutBoxList,
 .TokenomicsBoxText,
 .RoadmapBoxText {
-	font-family: "Bungee";
 	font-size: 2vw;
 	margin-left: 1%;
 }
@@ -187,7 +183,6 @@
 }
 
 .RoadmapBoxBoxItem {
-	font-family: "Bungee";
 	font-size: 1.7vw;
 	margin-left: 5%;
 }
@@ -205,7 +200,6 @@
 
 .FooterTgBox,
 .FooterDevBox {
-	font-family: "Bungee";
 	margin-left: 2%;
 }
 
@@ -288,7 +282,6 @@
 	}
 
 	.RoadmapBoxBoxItem {
-		font-family: "Bungee";
 		font-size: 1.25vw;
 		margin-left: 5%;
 	}

@@ -84,7 +84,9 @@ function Mint() {
 					></ProgressBar>
 					{user ? (
 						<Box className="MintingBox">
+							<Box h={1}></Box>
 							<NumberInput
+								w={65}
 								defaultValue={1}
 								min={1}
 								max={10}

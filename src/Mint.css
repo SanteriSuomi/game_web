@@ -15,11 +15,11 @@
 	border-width: 1.5px;
 	border-style: solid;
 	border-color: black;
-	width: 87.5%;
-	height: 85%;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	width: 87.5%;
+	height: 85%;
 }
 
 .InnerBox {
@@ -28,7 +28,8 @@
 	justify-content: space-between;
 	flex-direction: column;
 	height: 95%;
-	width: 275px;
+	min-width: 275px;
+	width: 25%;
 	background-color: whitesmoke;
 	margin-top: auto;
 	margin-bottom: auto;
@@ -40,8 +41,9 @@
 .TitleCenter {
 	background-color: rgb(40, 46, 40);
 	border-radius: 10px;
-	width: 250px;
-	height: 75px;
+	min-width: 250px;
+	width: 30%;
+	height: 7.5%;
 	margin-top: 3%;
 }
 
@@ -51,9 +53,11 @@
 }
 
 .Carousel {
-	width: 250px;
-	height: 75px;
-	margin-bottom: 220px;
+	width: 85%;
+	min-width: 250px;
+	min-height: 75px;
+	margin-bottom: 3%;
+	margin-top: 1%;
 }
 
 .PopupContent {
@@ -69,12 +73,12 @@
 }
 
 .MintingBox {
-	margin-bottom: 4%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 75px;
+	min-width: 75px;
+	margin-bottom: 4%;
 }
 
 .MintingBoxButtons {
