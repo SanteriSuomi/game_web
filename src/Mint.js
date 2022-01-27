@@ -18,8 +18,8 @@ import MintButton from "./MintButton.js";
 import { useState } from "react";
 
 const Moralis = require("moralis");
-const serverUrl = process.env.REACT_APP_SERVER_URL_LOCAL;
-const appId = process.env.REACT_APP_APP_ID_LOCAL;
+const serverUrl = process.env.REACT_APP_SERVER_URL_TESTNET;
+const appId = process.env.REACT_APP_APP_ID_TESTNET;
 Moralis.start({ serverUrl, appId });
 
 function Mint() {
