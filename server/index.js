@@ -27,6 +27,10 @@ app.listen(PORT, () => {
 	console.log(`Server listening on ${PORT}`);
 });
 
+app.get("/", (req, res) => {
+	res.send("Hello World");
+});
+
 /**
  * Send front-end instead if API is not accessed, to allow frontend and back-end to co-exist
  */
