@@ -23,6 +23,9 @@
     "reactjs-popup": "^2.0.5",
     "web-vitals": "^2.1.4"
   },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "eact-scripts build",
