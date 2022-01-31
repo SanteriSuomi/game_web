@@ -1,0 +1,15 @@
+{
+    "name": "King Slime",
+    "description": "A highly king slime.",
+    "image": "https://6ktkpuluwfsg.usemoralis.com/peasant/main.png",
+    "attributes": [
+        {
+            "trait_type": "Rarity",
+            "value": "Legendary"
+        },
+        {
+            "trait_type": "Hunger",
+            "value": 50
+        }
+    ]
+}
