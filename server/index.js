@@ -24,10 +24,10 @@ app.use(bodyParser.json());
  *	Start server by listening to a specific port, which is injected from environment (or default is used).
  */
 app.listen(PORT, () => {
-	console.log(`Server listening on ${PORT}`);
+	console.log(`Server listening to ${PORT}`);
 });
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
 	res.send("Hello World");
 });
 
