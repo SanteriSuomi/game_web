@@ -18,7 +18,7 @@ app.use(express.static(path.resolve(__dirname, "../client/build")));
 /**
  * Deliver static files (NFT images etc)
  */
-app.use("/files", express.static(path.resolve(__dirname, "../public")));
+app.use(express.static(path.resolve(__dirname, "../public")));
 /**
  * Parse JSON in a request body
  */
