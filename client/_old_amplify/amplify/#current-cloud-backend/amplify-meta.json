@@ -1,0 +1,15 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-slimekeeperfrontend-dev-212631-authRole",
+      "UnauthRoleArn": "arn:aws:iam::106338684096:role/amplify-slimekeeperfrontend-dev-212631-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::106338684096:role/amplify-slimekeeperfrontend-dev-212631-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-slimekeeperfrontend-dev-212631-deployment",
+      "UnauthRoleName": "amplify-slimekeeperfrontend-dev-212631-unauthRole",
+      "StackName": "amplify-slimekeeperfrontend-dev-212631",
+      "StackId": "arn:aws:cloudformation:eu-north-1:106338684096:stack/amplify-slimekeeperfrontend-dev-212631/3614ecf0-7bb9-11ec-bbce-0eeef8006c7e",
+      "AmplifyAppId": "d4q3iqph6k3ms"
+    }
+  }
+}
