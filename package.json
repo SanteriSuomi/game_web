@@ -1,5 +1,5 @@
 {
-  "name": "slimekeeper_frontend",
+  "name": "slimekeeper_web",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -24,7 +24,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm install",
+    "start": "npm install && npm start",
     "build": "npm run build",
     "test": "npm test",
     "eject": "npm eject"
