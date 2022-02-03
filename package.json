@@ -11,7 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.2",
-    "nodemon": "^2.0.15"
+    "merkletreejs": "^0.2.27",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1"
   }
 }

@@ -1,9 +1,11 @@
 const express = require("express");
+const DB = require("./db");
 
 const router = express.Router();
 
-router.get("/kek", (req, res) => {
-	res.send("KEK");
+router.get("/whitelist", async (req, res) => {
+	let all = await DB.getWhitelistedAddresses();
+	res.send(all);
 });
 
 module.exports = router;
