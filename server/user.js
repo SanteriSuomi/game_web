@@ -42,7 +42,7 @@ router.post("/login", async (req, res) => {
 			return;
 		}
 		let result = {
-			success: true,
+			success: false,
 			reason: "",
 			data: null,
 		};
@@ -52,11 +52,12 @@ router.post("/login", async (req, res) => {
 				process.env.TOKEN_KEY,
 				{ expiresIn: "24h" }
 			);
+			result.success = true;
 			result.data = token;
 			res.status(200).send(result);
 			return;
 		}
-		result.success = false;
+		result.reason = "Invalid credentials";
 		res.status(400).send(result);
 	} catch (error) {
 		console.log(error);
@@ -64,36 +65,49 @@ router.post("/login", async (req, res) => {
 });
 
 async function validateUser(username, password, res, isRegister) {
-	let validateResult = {
-		success: false,
-		password: null,
-	};
-	if (!(username && password)) {
-		res.status(400).send({
+	try {
+		let validateResult = {
 			success: false,
-			reason: "Username or password is not valid",
-			data: null,
-		});
-		return validateResult;
-	}
-	let result = await db.query("SELECT * FROM users WHERE username=$1;", [
-		username,
-	]);
-	if (result.success && result.data.rows.length > 0) {
-		if (isRegister) {
-			result.success = false;
-			result.reason = "This user already exists";
-			result.data = null;
-			res.status(409).send(result);
-			return validateResult;
-		} else {
-			validateResult.success = true;
-			validateResult.password = result.data.rows[0].password;
+			password: null,
+		};
+		if (!(username && password)) {
+			res.status(400).send({
+				success: false,
+				reason: "Username or password is not valid",
+				data: null,
+			});
 			return validateResult;
 		}
+		let result = await db.query("SELECT * FROM users WHERE username=$1;", [
+			username,
+		]);
+		if (result.success && result.data.rows.length > 0) {
+			if (isRegister) {
+				result.success = false;
+				result.reason = "This user already exists";
+				result.data = null;
+				res.status(409).send(result);
+				return validateResult;
+			} else {
+				validateResult.success = true;
+				validateResult.password = result.data.rows[0].password;
+				return validateResult;
+			}
+		}
+		// When user doesn't exist
+		if (isRegister) {
+			validateResult.success = true;
+			return validateResult;
+		} else {
+			result.success = false;
+			result.reason = "Invalid credentials";
+			result.data = null;
+			res.status(400).send(result);
+			return validateResult;
+		}
+	} catch (error) {
+		console.log(error);
 	}
-	res.status(400).send(result);
-	return validateResult;
 }
 
 module.exports = router;
