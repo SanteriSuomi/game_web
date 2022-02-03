@@ -12,23 +12,14 @@ router.post("/register", async (req, res) => {
 		if (!validate.success) {
 			return;
 		}
-		let encryptedPassword = await bcrypt.hash(password, 10);
 		let result = await db.query(
 			"INSERT INTO users (username, password) VALUES ($1, $2)",
-			[username, encryptedPassword]
+			[username, await bcrypt.hash(password, 10)]
 		);
 		if (!result.success) {
-			res.status(409).send(result);
-			return;
+			return res.status(409).send(result);
 		}
-		const token = jwt.sign(
-			{ username: username, password: password },
-			process.env.TOKEN_KEY,
-			{ expiresIn: "24h" }
-		);
-		result.success = true;
-		result.data = token;
-		res.status(200).send(result);
+		return signToken(username, password, result, res);
 	} catch (error) {
 		console.log(error);
 	}
@@ -47,24 +38,16 @@ router.post("/login", async (req, res) => {
 			data: null,
 		};
 		if (await bcrypt.compare(password, validate.password)) {
-			const token = jwt.sign(
-				{ username: username, password: password },
-				process.env.TOKEN_KEY,
-				{ expiresIn: "24h" }
-			);
-			result.success = true;
-			result.data = token;
-			res.status(200).send(result);
-			return;
+			return signToken(username, password, result, res);
 		}
 		result.reason = "Invalid credentials";
-		res.status(400).send(result);
+		return res.status(400).send(result);
 	} catch (error) {
 		console.log(error);
 	}
 });
 
-async function validateUser(username, password, res, isRegister) {
+async function validateUser(username, password, res, isRegistering) {
 	try {
 		let validateResult = {
 			success: false,
@@ -82,7 +65,7 @@ async function validateUser(username, password, res, isRegister) {
 			username,
 		]);
 		if (result.success && result.data.rows.length > 0) {
-			if (isRegister) {
+			if (isRegistering) {
 				result.success = false;
 				result.reason = "This user already exists";
 				result.data = null;
@@ -95,7 +78,7 @@ async function validateUser(username, password, res, isRegister) {
 			}
 		}
 		// When user doesn't exist
-		if (isRegister) {
+		if (isRegistering) {
 			validateResult.success = true;
 			return validateResult;
 		} else {
@@ -108,6 +91,23 @@ async function validateUser(username, password, res, isRegister) {
 	} catch (error) {
 		console.log(error);
 	}
+}
+
+function signToken(username, password, result, res) {
+	jwt.sign(
+		{ username: username, password: password },
+		process.env.TOKEN_KEY,
+		{ expiresIn: process.env.TOKEN_EXPIRY },
+		(error, token) => {
+			if (error) {
+				console.log(error);
+			}
+			result.success = true;
+			result.data = token;
+			res.status(200).send(result);
+			return result;
+		}
+	);
 }
 
 module.exports = router;
