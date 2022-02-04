@@ -7,9 +7,12 @@ const api = require("./api");
 const merkle = require("./merkle");
 
 const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.set("json spaces", 4);
+
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 app.use(express.static(path.resolve(__dirname, "../public")));
 
