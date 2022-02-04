@@ -6,7 +6,7 @@ const merkle = require("./merkle");
 
 const router = express.Router();
 
-router.use("/whitelist", merkle);
+router.use("/whitelist", merkle.router);
 
 router.get("/whitelist", middleware.verify, async (req, res) => {
 	let result = {

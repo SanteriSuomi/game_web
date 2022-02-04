@@ -4,6 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
 const api = require("./api");
+const merkle = require("./merkle");
 
 const app = express();
 app.use(cors());
@@ -14,21 +15,22 @@ app.use(express.static(path.resolve(__dirname, "../public")));
 
 const PORT = process.env.PORT || 3001;
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
 	console.log(`Server listening to ${PORT}`);
+	await merkle.updateMerkle();
 });
 
-app.get("/", (_, res) => {
+app.get("/", async (_, res) => {
 	res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 
-app.get("/mint", (_, res) => {
+app.get("/mint", async (_, res) => {
 	res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 
 app.use("/api", api);
 
-app.get("*", (_, res) => {
+app.get("*", async (_, res) => {
 	res.sendFile(path.resolve(__dirname, "../client/public", "error.html"));
 });
 

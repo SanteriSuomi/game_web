@@ -9,6 +9,17 @@ const router = express.Router();
 
 var merkleTree = null;
 
+async function updateMerkle(query) {
+	try {
+		let newQuery =
+			query || (await db.query("SELECT * FROM whitelist_nft;"));
+		const leaves = newQuery.data.rows.map((row) => keccak256(row.address));
+		merkleTree = new MerkleTree(leaves, keccak256, { sortPairs: true });
+	} catch (error) {
+		console.log(error);
+	}
+}
+
 router.put("/merkle", middleware.verify, async (_, res) => {
 	let result = {
 		success: false,
@@ -22,8 +33,7 @@ router.put("/merkle", middleware.verify, async (_, res) => {
 			result.reason = "No whitelisted addresses";
 			return res.status(404).send(result);
 		} else {
-			const leaves = query.data.rows.map((row) => keccak256(row.address));
-			merkleTree = new MerkleTree(leaves, keccak256, { sortPairs: true });
+			await updateMerkle(query);
 			result.success = true;
 			return res.status(201).send(result);
 		}
@@ -64,4 +74,7 @@ router.get("/merkle", middleware.verify, async (req, res) => {
 	return res.status(500).send(result);
 });
 
-module.exports = router;
+module.exports = {
+	router: router,
+	updateMerkle: updateMerkle,
+};
