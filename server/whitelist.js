@@ -6,9 +6,9 @@ const merkle = require("./merkle");
 
 const router = express.Router();
 
-router.use("/nft", merkle);
+router.use("/whitelist", merkle);
 
-router.get("/nft", middleware.verify, async (req, res) => {
+router.get("/whitelist", middleware.verify, async (req, res) => {
 	let result = {
 		success: false,
 		reason: "",
@@ -35,7 +35,7 @@ router.get("/nft", middleware.verify, async (req, res) => {
 	return res.status(404).send(result);
 });
 
-router.post("/nft", middleware.verify, async (req, res) => {
+router.post("/whitelist", middleware.verify, async (req, res) => {
 	let result = {
 		success: false,
 		reason: "",
