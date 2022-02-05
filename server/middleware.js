@@ -8,8 +8,7 @@ module.exports = {
 			data: null,
 		};
 		try {
-			const token = req.body.token;
-			const master = req.body.master;
+			const { token, master } = red.body;
 			if (!token && !master) {
 				result.reason = "Not authorized";
 				return res.status(403).send(result);
@@ -21,6 +20,7 @@ module.exports = {
 				return res.status(401).send(result);
 			}
 		} catch (error) {
+			console.log(error);
 			result.reason = "Invalid access token";
 			return res.status(401).send(result);
 		}

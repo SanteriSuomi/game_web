@@ -1,10 +1,11 @@
-require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
 const api = require("./api");
 const merkle = require("./merkle");
+
+require("dotenv").config();
 
 const app = express();
 
@@ -18,22 +19,22 @@ app.use(express.static(path.resolve(__dirname, "../public")));
 
 const PORT = process.env.PORT || 3001;
 
-app.listen(PORT, async () => {
+app.listen(PORT, () => {
 	console.log(`Server listening to ${PORT}`);
-	await merkle.updateMerkle();
+	merkle.updateMerkle();
 });
 
-app.get("/", async (_, res) => {
+app.get("/", (_, res) => {
 	res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 
-app.get("/mint", async (_, res) => {
+app.get("/mint", (_, res) => {
 	res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 
 app.use("/api", api);
 
-app.get("*", async (_, res) => {
+app.get("*", (_, res) => {
 	res.sendFile(path.resolve(__dirname, "../client/public", "error.html"));
 });
 
