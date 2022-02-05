@@ -7,6 +7,8 @@ const web3 = require("web3");
 
 const router = express.Router();
 
+updateMerkle();
+
 var merkleTree = null;
 
 async function updateMerkle(query) {

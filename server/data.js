@@ -29,7 +29,7 @@ router.get("/data", async (req, res) => {
 			result.reason = "Level or locked not provided in the query";
 			return res.status(400).send(result);
 		}
-		let character = levels[level];
+		const character = levels[level];
 		return res.status(200).json({
 			name: character.name,
 			description: character.description,
