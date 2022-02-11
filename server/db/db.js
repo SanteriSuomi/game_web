@@ -1,6 +1,7 @@
-const Pool = require("pg-pool");
+const pg = require("pg");
+const utils = require("../utils/utils");
 
-const pool = new Pool({
+const pool = new pg.Pool({
 	connectionString: process.env.DATABASE_URL,
 	ssl: {
 		rejectUnauthorized: false,
@@ -9,14 +10,10 @@ const pool = new Pool({
 });
 
 module.exports = {
-	query: async (query, params) => {
-		let result = {
-			success: true,
-			reason: "",
-			data: null,
-		};
+	query: async (newQuery, params) => {
+		let result = Object.create(utils.returnResult);
 		try {
-			result.data = await pool.query(query, params);
+			result.data = await pool.query(newQuery, params);
 		} catch (error) {
 			result.success = false;
 			result.reason = error.message;

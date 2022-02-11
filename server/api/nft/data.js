@@ -1,4 +1,5 @@
 const express = require("express");
+const utils = require("../../utils/utils");
 
 const router = express.Router();
 
@@ -18,11 +19,7 @@ const levels = {
 };
 
 router.get("/data", async (req, res) => {
-	let result = {
-		success: false,
-		reason: "",
-		data: null,
-	};
+	let result = Object.create(utils.returnResult);
 	try {
 		const { level, locked } = req.query;
 		if (!level || !locked) {

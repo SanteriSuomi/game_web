@@ -1,19 +1,16 @@
 const express = require("express");
-const db = require("./db");
-const middleware = require("./middleware");
+const db = require("../../db/db");
+const middleware = require("../../middleware/middleware");
 const web3 = require("web3");
-const merkle = require("./merkle");
+const merkle = require("./merkle/merkle");
+const utils = require("../../utils/utils");
 
 const router = express.Router();
 
 router.use("/whitelist", merkle.router);
 
 router.get("/whitelist", middleware.verify, async (req, res) => {
-	let result = {
-		success: false,
-		reason: "",
-		data: null,
-	};
+	let result = Object.create(utils.returnResult);
 	try {
 		const { address } = req.query;
 		if (!address) {
@@ -36,11 +33,7 @@ router.get("/whitelist", middleware.verify, async (req, res) => {
 });
 
 router.post("/whitelist", middleware.verify, async (req, res) => {
-	let result = {
-		success: false,
-		reason: "",
-		data: null,
-	};
+	let result = Object.create(utils.returnResult);
 	try {
 		const { address } = req.query;
 		if (!address) {

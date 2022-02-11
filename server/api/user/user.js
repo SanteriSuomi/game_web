@@ -1,7 +1,8 @@
 const express = require("express");
-const db = require("./db");
+const db = require("../../db/db");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const utils = require("../../utils/utils");
 
 const router = express.Router();
 
@@ -23,20 +24,18 @@ router.post("/user/register", async (req, res) => {
 	} catch (error) {
 		console.log(error);
 	}
+	result.reason = "Something went wrong internally";
+	return res.status(500).send(result);
 });
 
 router.post("/user/login", async (req, res) => {
+	let result = Object.create(utils.returnResult);
 	try {
 		const { username, password } = req.body;
 		const validate = await validateUser(username, password, res, false);
 		if (!validate.success) {
 			return;
 		}
-		let result = {
-			success: false,
-			reason: "",
-			data: null,
-		};
 		if (await bcrypt.compare(password, validate.password)) {
 			return signToken(username, password, result, res);
 		}
@@ -45,10 +44,13 @@ router.post("/user/login", async (req, res) => {
 	} catch (error) {
 		console.log(error);
 	}
+	result.reason = "Something went wrong internally";
+	return res.status(500).send(result);
 });
 
 async function validateUser(username, password, res, isRegistering) {
 	try {
+		// Special return only for validate user function
 		let validateResult = {
 			success: false,
 			password: null,
@@ -101,8 +103,11 @@ function signToken(username, password, result, res) {
 		(error, token) => {
 			if (error) {
 				console.log(error);
+				result.reason = "Something went wrong internally";
+				return res.status(500).send(result);
 			}
 			result.success = true;
+			result.reason = "";
 			result.data = token;
 			res.status(200).send(result);
 			return result;

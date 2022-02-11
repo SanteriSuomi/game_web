@@ -1,14 +1,11 @@
 const jwt = require("jsonwebtoken");
+const utils = require("../utils/utils");
 
 module.exports = {
 	verify: async (req, res, next) => {
-		let result = {
-			success: false,
-			reason: "",
-			data: null,
-		};
+		let result = Object.create(utils.returnResult);
 		try {
-			const { token, master } = red.body;
+			const { token, master } = req.body;
 			if (!token && !master) {
 				result.reason = "Not authorized";
 				return res.status(403).send(result);

@@ -1,12 +1,14 @@
 const express = require("express");
 const { MerkleTree } = require("merkletreejs");
 const keccak256 = require("keccak256");
-const middleware = require("./middleware");
-const db = require("./db");
+const middleware = require("../../../middleware/middleware");
+const db = require("../../../db/db");
 const web3 = require("web3");
+const utils = require("../../../utils/utils");
 
 const router = express.Router();
 
+// Update merkle tree from database once on server startup
 updateMerkle();
 
 var merkleTree = null;
@@ -23,11 +25,7 @@ async function updateMerkle(query) {
 }
 
 router.put("/merkle", middleware.verify, async (_, res) => {
-	let result = {
-		success: false,
-		reason: "",
-		data: null,
-	};
+	let result = Object.create(utils.returnResult);
 	try {
 		let query = await db.query("SELECT * FROM whitelist_nft;");
 		if (query.success && query.data.rows.length === 0) {
@@ -47,11 +45,7 @@ router.put("/merkle", middleware.verify, async (_, res) => {
 });
 
 router.get("/merkle", middleware.verify, async (req, res) => {
-	let result = {
-		success: false,
-		reason: "",
-		data: null,
-	};
+	let result = Object.create(utils.returnResult);
 	try {
 		const { address } = req.query;
 		if (!address) {

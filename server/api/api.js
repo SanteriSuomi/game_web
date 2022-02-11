@@ -1,6 +1,6 @@
 const express = require("express");
-const user = require("./user");
-const nft = require("./nft");
+const user = require("./user/user");
+const nft = require("./nft/nft");
 
 const router = express.Router();
 
