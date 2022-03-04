@@ -1,0 +1,86 @@
+* {
+	font-family: "Bungee";
+}
+
+.Mint {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.MintBox {
+	background-color: rgb(87, 187, 87);
+	border-radius: 10px;
+	border-width: 1.5px;
+	border-style: solid;
+	border-color: black;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 87.5%;
+	height: 85%;
+}
+
+.InnerBox {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 95%;
+	min-width: 275px;
+	width: 25%;
+	background-color: whitesmoke;
+	margin-top: auto;
+	margin-bottom: auto;
+	border-radius: 10px;
+	border-color: black;
+	border-width: 1px;
+}
+
+.TitleCenter {
+	background-color: rgb(40, 46, 40);
+	border-radius: 10px;
+	min-width: 250px;
+	width: 30%;
+	height: 7.5%;
+	margin-top: 3%;
+}
+
+.ButtonText {
+	color: white;
+	font-size: 25px;
+}
+
+.Carousel {
+	width: 85%;
+	min-width: 250px;
+	min-height: 75px;
+	margin-bottom: 3%;
+	margin-top: 1%;
+}
+
+.PopupContent {
+	background-color: white;
+	width: 325px;
+	height: 75px;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	border-radius: 10px;
+	border-color: black;
+	border-width: 1px;
+}
+
+.MintingBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 75px;
+	margin-bottom: 4%;
+}
+
+.MintingBoxButtons {
+	display: flex;
+}

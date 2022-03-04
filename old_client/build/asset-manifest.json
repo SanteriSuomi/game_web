@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.aa073536.css",
+    "main.js": "/static/js/main.c88980c7.js",
+    "static/media/bungee-all-400-normal.woff": "/static/media/bungee-all-400-normal.8b0456a220ead09e271f.woff",
+    "static/media/bungee-latin-400-normal.woff2": "/static/media/bungee-latin-400-normal.69670d8165d3df551786.woff2",
+    "static/media/bungee-latin-ext-400-normal.woff2": "/static/media/bungee-latin-ext-400-normal.7fc3ee1f38131f0f2082.woff2",
+    "static/media/bungee-vietnamese-400-normal.woff2": "/static/media/bungee-vietnamese-400-normal.f5949fca13d19a2120ca.woff2",
+    "index.html": "/index.html",
+    "main.aa073536.css.map": "/static/css/main.aa073536.css.map",
+    "main.c88980c7.js.map": "/static/js/main.c88980c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aa073536.css",
+    "static/js/main.c88980c7.js"
+  ]
+}

@@ -32,7 +32,7 @@ app.get("/mint", (_, res) => {
 app.use("/api", api);
 
 app.get("*", (_, res) => {
-	res.sendFile(path.resolve(__dirname, "../client/public", "error.html"));
+	res.sendFile(path.resolve(__dirname, "../client/build", "error.html"));
 });
 
 module.exports = app;

@@ -1,18 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from "./Main";
-import Mint from "./Mint";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
 
 ReactDOM.render(
-	<BrowserRouter>
-		<ChakraProvider>
-			<Routes>
-				<Route exact path="/" element={<Main></Main>}></Route>
-				<Route path="mint" element={<Mint></Mint>}></Route>
-			</Routes>
-		</ChakraProvider>
-	</BrowserRouter>,
+	<React.StrictMode>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
+	</React.StrictMode>,
 	document.getElementById("root")
 );
