@@ -11,6 +11,34 @@ export default function App() {
 	return (
 		<>
 			<CssBaseline></CssBaseline>
+			<AppBar position="sticky">
+				<Box
+					sx={{
+						display: "flex",
+						flexDirection: "row",
+						justifyContent: "flex-start",
+						alignItems: "center",
+						padding: "0.7%",
+						borderBottom: 1,
+						borderBottomColor: "secondary.main",
+					}}
+				>
+					<Typography
+						sx={{
+							flex: 1,
+							fontSize: "2.5rem",
+							marginLeft: "1.5%",
+							color: "typography.color",
+						}}
+					>
+						En Garde
+					</Typography>
+					<ActivationButton
+						open={false}
+						toggleSidebar={toggleSidebar}
+					></ActivationButton>
+				</Box>
+			</AppBar>
 			<Box
 				sx={{
 					display: "flex",
@@ -21,34 +49,6 @@ export default function App() {
 					backgroundColor: "primary.main",
 				}}
 			>
-				<AppBar position="sticky">
-					<Box
-						sx={{
-							display: "flex",
-							flexDirection: "row",
-							justifyContent: "flex-start",
-							alignItems: "center",
-							padding: "0.7%",
-							borderBottom: 1,
-							borderBottomColor: "secondary.main",
-						}}
-					>
-						<Typography
-							sx={{
-								flex: 1,
-								fontSize: "2.5rem",
-								marginLeft: "1.5%",
-								color: "typography.color",
-							}}
-						>
-							En Garde
-						</Typography>
-						<ActivationButton
-							open={false}
-							toggleSidebar={toggleSidebar}
-						></ActivationButton>
-					</Box>
-				</AppBar>
 				<Sidebar open={open} toggleSidebar={toggleSidebar}></Sidebar>
 			</Box>
 		</>
