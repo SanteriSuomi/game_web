@@ -1,7 +1,8 @@
-import { AppBar, Box, CssBaseline, Typography } from "@mui/material";
+import { AppBar, Box, Button, CssBaseline, Typography } from "@mui/material";
 import { useState } from "react";
 import ActivationButton from "./Sidebar/ActivationButton";
 import Sidebar from "./Sidebar/Sidebar";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 
 export default function App() {
 	const [open, setOpen] = useState(false);
@@ -11,21 +12,20 @@ export default function App() {
 	return (
 		<>
 			<CssBaseline></CssBaseline>
-			<AppBar position="sticky">
+			<AppBar position="fixed">
 				<Box
 					sx={{
 						display: "flex",
 						flexDirection: "row",
-						justifyContent: "flex-start",
+						justifyContent: "space-between",
 						alignItems: "center",
-						padding: "0.7%",
+						padding: "1.1%",
 						borderBottom: 1,
 						borderBottomColor: "secondary.main",
 					}}
 				>
 					<Typography
 						sx={{
-							flex: 1,
 							fontSize: "2.5rem",
 							marginLeft: "1.5%",
 							color: "typography.color",
@@ -33,12 +33,39 @@ export default function App() {
 					>
 						En Garde
 					</Typography>
+
+					<Box
+						sx={{
+							display: "flex",
+							flexDirection: "row",
+							justifyContent: "center",
+							alignItems: "center",
+							border: 1,
+							borderColor: "secondary.main",
+							borderRadius: 1,
+							padding: "0.5%",
+						}}
+					>
+						<AccountBalanceWalletIcon></AccountBalanceWalletIcon>
+						<Button>
+							<Typography
+								sx={{
+									fontSize: "0.9rem",
+									color: "secondary.main",
+								}}
+							>
+								Connect
+							</Typography>
+						</Button>
+					</Box>
+
 					<ActivationButton
 						open={false}
 						toggleSidebar={toggleSidebar}
 					></ActivationButton>
 				</Box>
 			</AppBar>
+
 			<Box
 				sx={{
 					display: "flex",

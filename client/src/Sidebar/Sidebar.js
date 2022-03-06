@@ -8,15 +8,27 @@ export default function Sidebar({ open, toggleSidebar }) {
 			variant="temporary"
 			anchor="right"
 			open={open}
-			hideBackdrop={true}
 			PaperProps={{
 				sx: {
 					backgroundColor: "primary.main",
 					borderLeft: 1,
 					borderColor: "secondary.main",
+					width: "50%",
 				},
 			}}
 		>
+			<Box
+				sx={{
+					display: "flex",
+					flexDirection: "row",
+					justifyContent: "flex-end",
+				}}
+			>
+				<ActivationButton
+					open={true}
+					toggleSidebar={toggleSidebar}
+				></ActivationButton>
+			</Box>
 			<Box
 				sx={{
 					display: "flex",
@@ -26,12 +38,12 @@ export default function Sidebar({ open, toggleSidebar }) {
 					margin: 1.1,
 				}}
 			>
-				<ActivationButton
-					open={true}
-					toggleSidebar={toggleSidebar}
-				></ActivationButton>
+				<ListButton text={"Presale"}></ListButton>
+				<ListButton text={"Mint"}></ListButton>
+				<ListButton text={"Game"}></ListButton>
 				<ListButton text={"About"}></ListButton>
 				<ListButton text={"Tokenomics"}></ListButton>
+				<ListButton text={"Whitepaper"}></ListButton>
 			</Box>
 		</Drawer>
 	);

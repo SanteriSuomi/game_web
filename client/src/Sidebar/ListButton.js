@@ -3,6 +3,7 @@ import { Button, Typography } from "@mui/material";
 export default function ListButton({ text }) {
 	return (
 		<Button
+			variant="contained"
 			sx={{
 				border: 1,
 				borderColor: "secondary.main",
