@@ -13,11 +13,13 @@ const theme = createTheme({
 		secondary: {
 			main: "#ff9a2e",
 		},
-		typography: {
-			color: "white",
+		text: {
+			primary: "#f7f7f7",
 		},
 	},
 });
+
+document.body.style.backgroundColor = theme.palette.primary.main;
 
 ReactDOM.render(
 	<React.StrictMode>

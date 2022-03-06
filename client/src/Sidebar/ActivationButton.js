@@ -2,12 +2,13 @@ import { Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
+const style = {
+	flex: 1,
+	fontSize: "calc(2.3rem + 1.3vw)",
+	color: "secondary.main",
+};
+
 export default function ActivationButton({ open, toggleSidebar }) {
-	let style = {
-		flex: 1,
-		fontSize: "2.75rem",
-		color: "secondary.main",
-	};
 	return (
 		<Button onClick={toggleSidebar}>
 			{open ? (

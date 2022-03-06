@@ -1,22 +1,31 @@
 import { Button, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 
 export default function ListButton({ text }) {
 	return (
-		<Button
-			variant="contained"
+		<Box
 			sx={{
-				border: 1,
-				borderColor: "secondary.main",
+				display: "flex",
+				justifyContent: "center",
 			}}
 		>
-			<Typography
+			<Button
+				variant="contained"
 				sx={{
-					fontSize: "1rem",
-					color: "typography.color",
+					border: 1,
+					borderColor: "secondary.main",
+					width: "calc(75px + 40%)",
 				}}
 			>
-				{text}
-			</Typography>
-		</Button>
+				<Typography
+					sx={{
+						fontSize: "calc(0.9rem + 0.6vw)",
+						color: "text.primary",
+					}}
+				>
+					{text}
+				</Typography>
+			</Button>
+		</Box>
 	);
 }

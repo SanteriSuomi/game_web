@@ -38,12 +38,14 @@ export default function Sidebar({ open, toggleSidebar }) {
 					margin: 1.1,
 				}}
 			>
+				<ListButton text={"About"}></ListButton>
+				<ListButton text={"Features"}></ListButton>
+				<ListButton text={"Tokenomics"}></ListButton>
+				<ListButton text={"Team"}></ListButton>
+				<ListButton text={"Whitepaper"}></ListButton>
 				<ListButton text={"Presale"}></ListButton>
 				<ListButton text={"Mint"}></ListButton>
 				<ListButton text={"Game"}></ListButton>
-				<ListButton text={"About"}></ListButton>
-				<ListButton text={"Tokenomics"}></ListButton>
-				<ListButton text={"Whitepaper"}></ListButton>
 			</Box>
 		</Drawer>
 	);
