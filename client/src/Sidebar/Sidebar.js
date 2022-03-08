@@ -13,7 +13,13 @@ export default function Sidebar({ open, toggleSidebar }) {
 					backgroundColor: "primary.main",
 					borderLeft: 1,
 					borderColor: "secondary.main",
-					width: "50%",
+					width: {
+						xs: "100%",
+						sm: "75%",
+						md: "75%",
+						lg: "50%",
+						xl: "40%",
+					},
 				},
 			}}
 		>

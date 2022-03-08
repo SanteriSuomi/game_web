@@ -18,54 +18,44 @@ export default function NavBar({ toggleSidebar }) {
 			>
 				<Typography
 					sx={{
-						fontSize: "calc(1.9rem + 0.9vw)",
-						marginLeft: "1.5%",
+						fontSize: "calc(1.5rem + 1vw)",
+						marginLeft: "2.5%",
 						color: "text.primary",
 						whiteSpace: "nowrap",
 					}}
 				>
 					En Garde
 				</Typography>
-
 				<Box
 					sx={{
 						display: "flex",
 						flexDirection: "row",
 						justifyContent: "center",
 						alignItems: "center",
+						border: 1,
+						borderColor: "secondary.main",
+						borderRadius: 1,
+						padding: "0.5%",
+						marginLeft: "calc(10px + 5%)",
 					}}
 				>
-					<Box
-						sx={{
-							display: "flex",
-							flexDirection: "row",
-							justifyContent: "center",
-							alignItems: "center",
-							border: 1,
-							borderColor: "secondary.main",
-							borderRadius: 1,
-							padding: "0.5%",
-							marginLeft: "calc(10px + 5%)",
-						}}
-					>
-						<AccountBalanceWalletIcon></AccountBalanceWalletIcon>
-						<Button>
-							<Typography
-								sx={{
-									color: "text.primary",
-									fontSize: "calc(0.8rem + 0.4vw)",
-								}}
-							>
-								Connect
-							</Typography>
-						</Button>
-					</Box>
-
-					<ActivationButton
-						open={false}
-						toggleSidebar={toggleSidebar}
-					></ActivationButton>
+					<AccountBalanceWalletIcon></AccountBalanceWalletIcon>
+					<Button>
+						<Typography
+							sx={{
+								color: "text.primary",
+								fontSize: "calc(0.8rem + 0.4vw)",
+							}}
+						>
+							Connect
+						</Typography>
+					</Button>
 				</Box>
+
+				<ActivationButton
+					open={false}
+					toggleSidebar={toggleSidebar}
+				></ActivationButton>
 			</Box>
 		</AppBar>
 	);
