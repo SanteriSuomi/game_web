@@ -1,30 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import Context from "./Context";
-
-const theme = createTheme({
-	palette: {
-		primary: {
-			main: "#1a1a1a",
-		},
-		secondary: {
-			main: "#ff9a2e",
-		},
-		text: {
-			primary: "#f7f7f7",
-		},
-	},
-});
-
-document.body.style.backgroundColor = theme.palette.primary.main;
+import Context from "./Context/Context";
+import Theme from "./Context/Theme";
 
 ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<ThemeProvider theme={theme}>
+			<ThemeProvider theme={Theme}>
 				<Context.Provider
 					value={{
 						mainColor: "#1a1a1a",
