@@ -2,7 +2,8 @@ import { CssBaseline } from "@mui/material";
 import { useState } from "react";
 import Sidebar from "./Sidebar/Sidebar";
 import NavBar from "./NavBar/NavBar";
-import MidContent from "./MidContent/MidContent";
+import About from "./Content/Specific/About";
+import Features from "./Content/Specific/Features";
 
 export default function App() {
 	const [open, setOpen] = useState(false);
@@ -15,7 +16,8 @@ export default function App() {
 			<CssBaseline></CssBaseline>
 			<NavBar toggleSidebar={toggleSidebar}></NavBar>
 			<Sidebar open={open} toggleSidebar={toggleSidebar}></Sidebar>
-			<MidContent></MidContent>
+			<About></About>
+			<Features></Features>
 		</>
 	);
 }
