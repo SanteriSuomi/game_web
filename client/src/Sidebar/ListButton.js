@@ -12,14 +12,14 @@ export default function ListButton({ text }) {
 			<Button
 				variant="contained"
 				sx={{
-					border: 1,
+					border: 2,
 					borderColor: "secondary.main",
-					width: "calc(75px + 40%)",
+					width: "calc(60px + 35%)",
 				}}
 			>
 				<Typography
 					sx={{
-						fontSize: "calc(0.9rem + 0.6vw)",
+						fontSize: "calc(0.85rem + 0.55vw)",
 						color: "text.primary",
 					}}
 				>

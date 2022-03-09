@@ -11,8 +11,8 @@ export default function NavBar({ toggleSidebar }) {
 					flexDirection: "row",
 					justifyContent: "space-between",
 					alignItems: "center",
-					padding: "1.1%",
-					borderBottom: 1,
+					padding: { xs: "1.1%", md: "0.55%" },
+					borderBottom: 2,
 					borderBottomColor: "secondary.main",
 				}}
 			>
@@ -32,9 +32,9 @@ export default function NavBar({ toggleSidebar }) {
 						flexDirection: "row",
 						justifyContent: "center",
 						alignItems: "center",
-						border: 1,
+						border: 2,
 						borderColor: "secondary.main",
-						borderRadius: 1,
+						borderRadius: 2,
 						padding: "0.5%",
 						marginLeft: "calc(10px + 5%)",
 					}}

@@ -1,5 +1,6 @@
 import { Box } from "@mui/system";
 import ContentContainer from "../ContentContainer";
+import ImageBox from "../ImageBox";
 import TextContentBox from "../TextContentBox";
 
 export default function About() {
@@ -24,15 +25,7 @@ export default function About() {
 							textColor: "text.primary",
 						}}
 					></TextContentBox>
-
-					<Box flex={1}>
-						<img
-							width={"100%"}
-							height={"auto"}
-							src="https://loremflickr.com/1000/600/game"
-							alt="art"
-						></img>
-					</Box>
+					<ImageBox source="https://loremflickr.com/1000/600/game"></ImageBox>
 				</>
 			}
 			backgroundColor={"tertiary.main"}

@@ -12,13 +12,13 @@ export default function TextContentBox({ title, body, content, palette }) {
 							display: "flex",
 							flexDirection: "row",
 							justifyContent: "center",
-							fontSize: "calc(1.3rem + 0.75vw)",
+							fontSize: "calc(1.25rem + 0.7vw)",
 							color: palette.textColor,
 						}}
 					>
 						{title}
 					</Typography>
-					<Box marginTop={"1.5%"}></Box>
+					<Box marginTop={"1.75%"}></Box>
 					<Divider
 						variant="middle"
 						sx={{
@@ -30,7 +30,7 @@ export default function TextContentBox({ title, body, content, palette }) {
 					<Box marginTop={"3.5%"}></Box>
 					<Typography
 						sx={{
-							fontSize: "calc(0.775rem + 0.55vw)",
+							fontSize: "calc(0.75rem + 0.5vw)",
 							color: palette.textColor,
 						}}
 					>

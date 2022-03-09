@@ -9,9 +9,9 @@ export default function ContentBox({ content, palette }) {
 				alignItems: "center",
 				justifyContent: "center",
 				backgroundColor: palette.backgroundColor,
-				border: 1.5,
+				border: 2,
 				borderColor: palette.border,
-				borderRadius: 1,
+				borderRadius: 2,
 				padding: "3.5%",
 				flex: 1,
 			}}

@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import ContentContainer from "../ContentContainer";
+import ImageBox from "../ImageBox";
 import TextContentBox from "../TextContentBox";
 
 export default function Features() {
@@ -7,15 +8,7 @@ export default function Features() {
 		<ContentContainer
 			content={
 				<>
-					<Box flex={1}>
-						<img
-							width={"100%"}
-							height={"auto"}
-							src="https://loremflickr.com/1000/600/game"
-							alt="art"
-						></img>
-					</Box>
-
+					<ImageBox source="https://loremflickr.com/1000/600/game"></ImageBox>
 					<TextContentBox
 						title={"Features"}
 						body={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

@@ -9,8 +9,8 @@ export default function ContentContainer({ content, backgroundColor }) {
 				justifyContent: "center",
 				alignItems: "center",
 				backgroundColor: backgroundColor,
-				padding: "4%",
-				gap: "22px 22px",
+				padding: "3.5%",
+				gap: "22px 25px",
 			}}
 		>
 			{content}

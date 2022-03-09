@@ -15,10 +15,10 @@ export default function Sidebar({ open, toggleSidebar }) {
 					borderColor: "secondary.main",
 					width: {
 						xs: "100%",
-						sm: "75%",
-						md: "75%",
-						lg: "50%",
-						xl: "40%",
+						sm: "70%",
+						md: "70%",
+						lg: "45%",
+						xl: "35%",
 					},
 				},
 			}}
@@ -40,13 +40,14 @@ export default function Sidebar({ open, toggleSidebar }) {
 					display: "flex",
 					flexDirection: "column",
 					marginTop: "7.5%",
-					gap: 1.25,
+					gap: 1.5,
 					margin: 1.1,
 				}}
 			>
 				<ListButton text={"About"}></ListButton>
 				<ListButton text={"Features"}></ListButton>
 				<ListButton text={"Tokenomics"}></ListButton>
+				<ListButton text={"Roadmap"}></ListButton>
 				<ListButton text={"Team"}></ListButton>
 				<ListButton text={"Whitepaper"}></ListButton>
 				<ListButton text={"Presale"}></ListButton>
