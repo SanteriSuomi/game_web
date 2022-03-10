@@ -6,7 +6,6 @@ export default function BasicTextInfoBox({
 	title,
 	subTitle,
 	textColor,
-	backgroundColor,
 }) {
 	const theme = useTheme();
 	return (

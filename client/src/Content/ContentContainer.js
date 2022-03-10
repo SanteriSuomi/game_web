@@ -25,9 +25,9 @@ export default function ContentContainer({ content, backgroundColor }) {
 				justifyContent: "center",
 				alignItems: "center",
 				backgroundColor: backgroundColor,
-				padding: "3.5%",
+				padding: "3%",
 				height: boxHeight,
-				borderBottom: 2,
+				border: 1.5,
 				borderColor: "secondary.main",
 				scrollSnapAlign: "center",
 			}}
