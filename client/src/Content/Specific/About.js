@@ -1,4 +1,3 @@
-import { Box } from "@mui/system";
 import ContentContainer from "../ContentContainer";
 import ImageBox from "../ImageBox";
 import TextContentBox from "../TextContentBox";

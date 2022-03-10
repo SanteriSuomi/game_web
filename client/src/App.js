@@ -1,7 +1,7 @@
 import { CssBaseline } from "@mui/material";
 import { useState } from "react";
 import Sidebar from "./Sidebar/Sidebar";
-import NavBar from "./NavBar/NavBar";
+import { NavBar } from "./NavBar/NavBar";
 import About from "./Content/Specific/About";
 import Features from "./Content/Specific/Features";
 

@@ -2,10 +2,15 @@ import { AppBar, Box, Button, Typography } from "@mui/material";
 import ActivationButton from "../Sidebar/ActivationButton";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 
-export default function NavBar({ toggleSidebar }) {
+let NavBarBoxRef = null;
+
+const NavBar = function NavBar({ toggleSidebar }) {
 	return (
 		<AppBar position="sticky">
 			<Box
+				ref={(node) => {
+					NavBarBoxRef = node;
+				}}
 				sx={{
 					display: "flex",
 					flexDirection: "row",
@@ -59,4 +64,6 @@ export default function NavBar({ toggleSidebar }) {
 			</Box>
 		</AppBar>
 	);
-}
+};
+
+export { NavBar, NavBarBoxRef };
