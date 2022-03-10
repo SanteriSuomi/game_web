@@ -1,10 +1,10 @@
 import { Box } from "@mui/system";
 
-export default function ImageBox({ source }) {
+export default function ImageBox({ source, flex }) {
 	return (
 		<Box
 			sx={{
-				flex: 1,
+				flex: flex === undefined ? 1 : flex,
 				overflow: "hidden",
 				borderRadius: "2%",
 			}}

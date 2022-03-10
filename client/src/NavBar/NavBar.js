@@ -14,7 +14,7 @@ const NavBar = function NavBar({ toggleSidebar }) {
 				sx={{
 					display: "flex",
 					flexDirection: "row",
-					justifyContent: "space-between",
+					justifyContent: { xs: "space-around", sm: "space-between" },
 					alignItems: "center",
 					padding: { xs: "1.1%", md: "0.55%" },
 					borderBottom: 2,
@@ -31,6 +31,7 @@ const NavBar = function NavBar({ toggleSidebar }) {
 				>
 					En Garde
 				</Typography>
+
 				<Box
 					sx={{
 						display: "flex",
