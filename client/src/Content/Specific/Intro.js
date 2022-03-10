@@ -29,7 +29,7 @@ export default function Intro() {
 							sx={{
 								fontSize: "calc(2.1rem + 1.5vw)",
 								color: "text.secondary",
-								textShadow: `2px 2px 3.5px ${theme.palette.secondary.main}`,
+								textShadow: `1.5px 1.5px 3px ${theme.palette.secondary.main}`,
 							}}
 						>
 							En Garde
@@ -49,7 +49,7 @@ export default function Intro() {
 								fontSize: "calc(1.25rem + 0.5vw)",
 								color: "text.secondary",
 								marginTop: "1%",
-								textShadow: `2px 2px 3px ${theme.palette.secondary.main}`,
+								textShadow: `1.5px 1.5px 3px ${theme.palette.secondary.main}`,
 							}}
 						>
 							Sustainable Node GameFi

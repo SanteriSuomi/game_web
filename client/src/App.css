@@ -1,0 +1,11 @@
+/*These hide the scrollbara*/
+.content-container {
+	overflow-y: scroll;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+.content-container::-webkit-scrollbar {
+	/* WebKit (Chrome) */
+	width: 0;
+	height: 0;
+}
