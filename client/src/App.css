@@ -1,4 +1,4 @@
-/*These hide the scrollbara*/
+/*These hide the scrollbar*/
 .content-container {
 	overflow-y: scroll;
 	scrollbar-width: none; /* Firefox */

@@ -4,7 +4,7 @@ export default function ImageBox({ source, flex }) {
 	return (
 		<Box
 			sx={{
-				flex: flex === undefined ? 1 : flex,
+				flex: 2,
 				overflow: "hidden",
 				borderRadius: "5%",
 			}}

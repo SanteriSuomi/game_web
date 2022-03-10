@@ -26,7 +26,6 @@ export default function ContentContainer({ content, backgroundColor }) {
 				alignItems: "center",
 				backgroundColor: backgroundColor,
 				padding: "3.5%",
-				gap: "22px 25px",
 				height: boxHeight,
 				borderBottom: 2,
 				borderColor: "secondary.main",
