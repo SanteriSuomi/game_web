@@ -6,7 +6,7 @@ export default function ImageBox({ source, flex }) {
 			sx={{
 				flex: flex === undefined ? 1 : flex,
 				overflow: "hidden",
-				borderRadius: "2%",
+				borderRadius: "5%",
 			}}
 		>
 			<img width="100%" height="auto" src={source} alt="art"></img>

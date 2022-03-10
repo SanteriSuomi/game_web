@@ -1,8 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import { useTheme } from "@emotion/react";
+import { Box, Divider, Typography } from "@mui/material";
 import ContentContainer from "../ContentContainer";
 import ImageBox from "../ImageBox";
 
 export default function Intro() {
+	const theme = useTheme();
 	return (
 		<ContentContainer
 			content={
@@ -26,14 +28,28 @@ export default function Intro() {
 						<Typography
 							sx={{
 								fontSize: "calc(2.1rem + 1.5vw)",
+								color: "text.secondary",
+								textShadow: `2px 2px 3.5px ${theme.palette.secondary.main}`,
 							}}
 						>
 							En Garde
 						</Typography>
+						<Divider
+							variant="middle"
+							flexItem
+							sx={{
+								backgroundColor: "secondary.main",
+								height: "2px",
+								width: "65%",
+								marginLeft: "0%",
+							}}
+						></Divider>
 						<Typography
 							sx={{
 								fontSize: "calc(1.25rem + 0.5vw)",
-								color: "secondary.main",
+								color: "text.secondary",
+								marginTop: "1%",
+								textShadow: `2px 2px 3px ${theme.palette.secondary.main}`,
 							}}
 						>
 							Sustainable Node GameFi
@@ -45,7 +61,7 @@ export default function Intro() {
 					></ImageBox>
 				</Box>
 			}
-			backgroundColor={"primary.main"}
+			backgroundColor={"tertiary.main"}
 		></ContentContainer>
 	);
 }

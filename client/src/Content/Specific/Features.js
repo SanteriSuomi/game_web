@@ -20,14 +20,14 @@ export default function Features() {
                                deserunt mollit anim id est laborum.`}
 						palette={{
 							divider: "secondary.main",
-							backgroundColor: "tertiary.main",
+							backgroundColor: "primary.main",
 							border: "secondary.main",
-							textColor: "text.secondary",
+							textColor: "text.primary",
 						}}
 					></TextContentBox>
 				</>
 			}
-			backgroundColor={"primary.main"}
+			backgroundColor={"tertiary.main"}
 		></ContentContainer>
 	);
 }

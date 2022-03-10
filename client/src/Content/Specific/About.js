@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import ContentContainer from "../ContentContainer";
 import ImageBox from "../ImageBox";
 import TextContentBox from "../TextContentBox";
@@ -20,15 +19,15 @@ export default function About() {
                                deserunt mollit anim id est laborum.`}
 						palette={{
 							divider: "secondary.main",
-							backgroundColor: "primary.main",
+							backgroundColor: "tertiary.main",
 							border: "secondary.main",
-							textColor: "text.primary",
+							textColor: "text.secondary",
 						}}
 					></TextContentBox>
 					<ImageBox source="https://loremflickr.com/1000/600/game"></ImageBox>
 				</>
 			}
-			backgroundColor={"tertiary.main"}
+			backgroundColor={"primary.main"}
 		></ContentContainer>
 	);
 }
