@@ -1,4 +1,4 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
 
 export default function BasicTextInfoBox({
@@ -14,7 +14,8 @@ export default function BasicTextInfoBox({
 				display: "flex",
 				flex: 1,
 				flexDirection: "column",
-				textAlign: textLeft ? "left" : "right",
+				justifyContent: "flex-start",
+				alignItems: textLeft ? "flex-start" : "flex-end",
 			}}
 		>
 			<Typography
@@ -28,16 +29,13 @@ export default function BasicTextInfoBox({
 			</Typography>
 			{subTitle ? (
 				<>
-					<Divider
-						variant="middle"
-						flexItem
+					<Box
 						sx={{
 							backgroundColor: "secondary.main",
 							height: "2px",
-							width: "50%",
-							marginLeft: textLeft ? "0%" : "50%",
+							minWidth: "230px",
 						}}
-					></Divider>
+					></Box>
 					<Typography
 						sx={{
 							fontSize: "calc(1.25rem + 0.5vw)",

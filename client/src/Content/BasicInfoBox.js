@@ -2,8 +2,8 @@ import { Box } from "@mui/material";
 import BasicTextInfoBox from "./BasicTextInfoBox";
 
 export default function BasicInfoBox({
+	children,
 	textLeft,
-	content,
 	title,
 	subTitle,
 	textColor,
@@ -26,11 +26,11 @@ export default function BasicInfoBox({
 						subTitle={subTitle}
 						textColor={textColor}
 					></BasicTextInfoBox>
-					{content}
+					{children}
 				</>
 			) : (
 				<>
-					{content}
+					{children}
 					<BasicTextInfoBox
 						textLeft={textLeft}
 						title={title}

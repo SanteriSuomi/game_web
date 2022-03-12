@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { useLayoutEffect, useState } from "react";
 import { NavBarBoxRef } from "../NavBar/NavBar";
 
-export default function ContentContainer({ content, backgroundColor }) {
+export default function ContentContainer({ children, backgroundColor }) {
 	const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 	const [boxHeight, setBoxHeight] = useState(0);
 
@@ -32,7 +32,7 @@ export default function ContentContainer({ content, backgroundColor }) {
 				scrollSnapAlign: "center",
 			}}
 		>
-			{content}
+			{children}
 		</Box>
 	);
 }
