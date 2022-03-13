@@ -2,20 +2,24 @@ import ContentContainer from "../ContentContainer";
 import BasicInfoBox from "../BasicInfoBox";
 import { Typography } from "@mui/material";
 
-export default function About() {
+export default function About({ theme }) {
 	return (
-		<ContentContainer backgroundColor={"primary.main"}>
+		<ContentContainer
+			backgroundColor={theme.palette.primary.main}
+			theme={theme}
+		>
 			<BasicInfoBox
 				textLeft={false}
 				title="About"
 				subTitle={"What is it all about?"}
 				textColor={"text.primary"}
+				gap={{ xs: 5, md: 0 }}
 			>
 				<Typography
 					sx={{
 						flex: 1,
-						maxWidth: "600px",
-						fontSize: "calc(0.8rem + 0.8vw)",
+						fontSize: "calc(0.9rem + 0.6vw)",
+						marginTop: { xs: 10, md: 0 },
 					}}
 				>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

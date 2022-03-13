@@ -7,8 +7,11 @@ import Intro from "./Content/Specific/Intro";
 import { Box } from "@mui/system";
 import { NavBar, NavBarBoxRef } from "./NavBar/NavBar";
 import "./App.css";
+import { useTheme } from "@emotion/react";
 
 export default function App() {
+	const theme = useTheme();
+
 	const [open, setOpen] = useState(false);
 	const toggleSidebar = () => {
 		setOpen(!open);
@@ -33,9 +36,9 @@ export default function App() {
 					overflowY: "scroll",
 				}}
 			>
-				<Intro></Intro>
-				<About></About>
-				<Features></Features>
+				<Intro theme={theme}></Intro>
+				<About theme={theme}></About>
+				<Features theme={theme}></Features>
 			</Box>
 		</>
 	);

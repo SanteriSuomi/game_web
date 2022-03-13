@@ -2,9 +2,12 @@ import ContentContainer from "../ContentContainer";
 import BasicInfoBox from "../BasicInfoBox";
 import ImageBox from "../ImageBox";
 
-export default function Intro() {
+export default function Intro({ theme }) {
 	return (
-		<ContentContainer backgroundColor={"tertiary.main"}>
+		<ContentContainer
+			backgroundColor={theme.palette.tertiary.main}
+			theme={theme}
+		>
 			<BasicInfoBox
 				textLeft={true}
 				title="En Garde"

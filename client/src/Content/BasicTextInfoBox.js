@@ -11,8 +11,8 @@ export default function BasicTextInfoBox({
 	return (
 		<Box
 			sx={{
-				display: "flex",
 				flex: 1,
+				display: "flex",
 				flexDirection: "column",
 				justifyContent: "flex-start",
 				alignItems: textLeft ? "flex-start" : "flex-end",

@@ -7,14 +7,17 @@ export default function BasicInfoBox({
 	title,
 	subTitle,
 	textColor,
+	gap,
 }) {
 	return (
 		<Box
 			sx={{
 				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
 				flexDirection: { xs: "column", md: "row" },
 				width: "90%",
-				rowGap: { xs: 5, sm: 0 },
+				rowGap: gap ? gap : { xs: 5, sm: 0 },
 				marginBottom: { xs: 12, sm: 0 },
 			}}
 		>

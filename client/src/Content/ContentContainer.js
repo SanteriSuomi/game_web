@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { useLayoutEffect, useState } from "react";
 import { NavBarBoxRef } from "../NavBar/NavBar";
 
-export default function ContentContainer({ children, backgroundColor }) {
+export default function ContentContainer({ children, backgroundColor, theme }) {
 	const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 	const [boxHeight, setBoxHeight] = useState(0);
 
@@ -22,9 +22,10 @@ export default function ContentContainer({ children, backgroundColor }) {
 			sx={{
 				display: "flex",
 				flexDirection: { xs: "column", md: "row" },
-				justifyContent: "center",
 				alignItems: "center",
-				backgroundColor: backgroundColor,
+				justifyContent: "center",
+				backgroundImage: `radial-gradient(farthest-side at 200% -100%, ${backgroundColor}, ${theme.palette.secondary.main}, ${backgroundColor})`,
+				// backgroundImage: `linear-gradient(125deg, ${backgroundColor}, ${theme.palette.secondary.main})`,
 				padding: "3%",
 				height: boxHeight,
 				border: 1.5,
