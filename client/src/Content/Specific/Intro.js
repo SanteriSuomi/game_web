@@ -14,7 +14,7 @@ export default function Intro({ theme }) {
 				subTitle={"Sustainable Node GameFi"}
 				textColor={"text.secondary"}
 			>
-				<ImageBox source="https://loremflickr.com/1000/600/game"></ImageBox>
+				<ImageBox source="https://loremflickr.com/1500/900/game"></ImageBox>
 			</BasicInfoBox>
 		</ContentContainer>
 	);

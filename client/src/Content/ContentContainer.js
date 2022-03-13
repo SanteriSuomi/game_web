@@ -1,22 +1,21 @@
 import { Box } from "@mui/material";
-import { useLayoutEffect, useState } from "react";
+import { useState, useLayoutEffect } from "react";
+import useOnResize from "../Hooks/useOnResize";
 import { NavBarBoxRef } from "../NavBar/NavBar";
 
 export default function ContentContainer({ children, backgroundColor, theme }) {
-	const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 	const [boxHeight, setBoxHeight] = useState(0);
 
 	useLayoutEffect(() => {
-		function update() {
-			setWindowHeight(window.innerHeight);
-			setBoxHeight(windowHeight - NavBarBoxRef.offsetHeight);
-		}
-		window.addEventListener("resize", () => {
-			setTimeout(update, 100);
-		});
-		setBoxHeight(windowHeight - NavBarBoxRef.offsetHeight);
-	}, [windowHeight]);
+		setBoxHeight(window.innerHeight - NavBarBoxRef.offsetHeight);
+	}, []);
 
+	useOnResize(() => {
+		setBoxHeight(window.innerHeight - NavBarBoxRef.offsetHeight);
+	});
+
+	const backgroundColorIsTertiary =
+		backgroundColor === theme.palette.tertiary.main;
 	return (
 		<Box
 			sx={{
@@ -24,8 +23,9 @@ export default function ContentContainer({ children, backgroundColor, theme }) {
 				flexDirection: { xs: "column", md: "row" },
 				alignItems: "center",
 				justifyContent: "center",
-				backgroundImage: `radial-gradient(farthest-side at 200% -100%, ${backgroundColor}, ${theme.palette.secondary.main}, ${backgroundColor})`,
-				// backgroundImage: `linear-gradient(125deg, ${backgroundColor}, ${theme.palette.secondary.main})`,
+				backgroundImage: backgroundColorIsTertiary
+					? `linear-gradient(270deg, ${theme.palette.primary.main} 0%, ${backgroundColor} 30%)`
+					: `linear-gradient(270deg, ${backgroundColor} 70%, ${theme.palette.secondary.main} 100%)`,
 				padding: "3%",
 				height: boxHeight,
 				border: 1.5,

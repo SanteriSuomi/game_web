@@ -6,8 +6,9 @@ import Features from "./Content/Specific/Features";
 import Intro from "./Content/Specific/Intro";
 import { Box } from "@mui/system";
 import { NavBar, NavBarBoxRef } from "./NavBar/NavBar";
-import "./App.css";
 import { useTheme } from "@emotion/react";
+import "./App.css";
+import useOnResize from "./Hooks/useOnResize";
 
 export default function App() {
 	const theme = useTheme();
@@ -23,6 +24,10 @@ export default function App() {
 		setMaxHeight(window.innerHeight - NavBarBoxRef.offsetHeight);
 	}, []);
 
+	useOnResize(() => {
+		setMaxHeight(window.innerHeight - NavBarBoxRef.offsetHeight);
+	});
+
 	return (
 		<>
 			<CssBaseline></CssBaseline>
@@ -33,7 +38,6 @@ export default function App() {
 				sx={{
 					scrollSnapType: "y mandatory",
 					maxHeight: maxHeight,
-					overflowY: "scroll",
 				}}
 			>
 				<Intro theme={theme}></Intro>

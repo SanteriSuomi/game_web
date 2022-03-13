@@ -17,7 +17,7 @@ export default function About({ theme }) {
 			>
 				<Typography
 					sx={{
-						flex: 1,
+						flex: 1.5,
 						fontSize: "calc(0.9rem + 0.6vw)",
 						marginTop: { xs: 10, md: 0 },
 					}}
