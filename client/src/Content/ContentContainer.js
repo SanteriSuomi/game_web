@@ -14,8 +14,6 @@ export default function ContentContainer({ children, backgroundColor, theme }) {
 		setBoxHeight(window.innerHeight - NavBarBoxRef.offsetHeight);
 	});
 
-	const backgroundColorIsTertiary =
-		backgroundColor === theme.palette.tertiary.main;
 	return (
 		<Box
 			sx={{
@@ -23,9 +21,10 @@ export default function ContentContainer({ children, backgroundColor, theme }) {
 				flexDirection: { xs: "column", md: "row" },
 				alignItems: "center",
 				justifyContent: "center",
-				backgroundImage: backgroundColorIsTertiary
-					? `linear-gradient(270deg, ${theme.palette.primary.main} 0%, ${backgroundColor} 30%)`
-					: `linear-gradient(270deg, ${backgroundColor} 70%, ${theme.palette.secondary.main} 100%)`,
+				backgroundImage:
+					backgroundColor === theme.palette.tertiary.main
+						? `linear-gradient(270deg, ${theme.palette.primary.main} 0%, ${backgroundColor} 30%)`
+						: `linear-gradient(270deg, ${backgroundColor} 70%, ${theme.palette.secondary.main} 100%)`,
 				padding: "3%",
 				height: boxHeight,
 				border: 1.5,

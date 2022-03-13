@@ -15,7 +15,7 @@ export default function BasicTextInfoBox({
 				display: "flex",
 				flexDirection: "column",
 				alignItems: textLeft ? "flex-start" : "flex-end",
-				alignSelf: "flex-start",
+				alignSelf: textLeft ? "flex-start" : "flex-end",
 			}}
 		>
 			<Typography
